@@ -15,10 +15,12 @@ import java.util.ArrayList;
 public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
-        this.getCommand("booktest").setExecutor(new CommandBookTest());
         getServer().getPluginManager().registerEvents(new CancelPortal(), this);
         getServer().getPluginManager().registerEvents(new DeathEvent(), this);
         getServer().getPluginManager().registerEvents(new PigKillTest(), this);
+        getServer().getPluginManager().registerEvents(new NPC(), this);
+        getServer().getPluginManager().registerEvents(new ArmorStandCancel(), this);
+
     }
 
     @Override
@@ -26,26 +28,5 @@ public class Main extends JavaPlugin {
 
     }
 
-
-    public class CommandBookTest implements CommandExecutor {
-        @Override
-        public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-            if (sender instanceof Player) {
-                Player p = (Player) sender;
-                ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
-                BookMeta bookMeta = (BookMeta) book.getItemMeta();
-                bookMeta.setTitle("Rules");
-                bookMeta.setAuthor("The Loud Snowy Team");
-
-                ArrayList<String> page = new ArrayList<String>();
-                page.add("\n" + ChatColor.BOLD + "1: Be a nice person!" + "\n" + "\n" + "2: Dont greif others... \n \n 3: Try not to break the game :/ \n \n 4: Have a bunch of fun.");
-                bookMeta.setPages(page);
-                p.getInventory().addItem(book);
-
-            }
-            return true;
-        }
-
-    }
 
 }
