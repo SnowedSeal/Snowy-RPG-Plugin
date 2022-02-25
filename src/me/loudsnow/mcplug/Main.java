@@ -1,16 +1,7 @@
 package me.loudsnow.mcplug;
 
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.BookMeta;
+import me.loudsnow.mcplug.npcs.*;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.ArrayList;
 
 public class Main extends JavaPlugin {
     @Override
@@ -18,9 +9,14 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CancelPortal(), this);
         getServer().getPluginManager().registerEvents(new DeathEvent(), this);
         getServer().getPluginManager().registerEvents(new PigKillTest(), this);
-        getServer().getPluginManager().registerEvents(new NPC(), this);
         getServer().getPluginManager().registerEvents(new ArmorStandCancel(), this);
-
+        getServer().getPluginManager().registerEvents(new CancelBreakEvent(), this);
+        getServer().getPluginManager().registerEvents(new CancelPlaceEvent(), this);
+        getServer().getPluginManager().registerEvents(new NPC1(), this);
+        getServer().getPluginManager().registerEvents(new NPC2(), this);
+        getServer().getPluginManager().registerEvents(new NPC3(), this);
+        getServer().getPluginManager().registerEvents(new NPC4(), this);
+        getServer().getPluginManager().registerEvents(new NPC5(), this);
     }
 
     @Override
