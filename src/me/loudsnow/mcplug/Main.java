@@ -16,7 +16,9 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         this.getCommand("booktest").setExecutor(new CommandBookTest());
-
+        getServer().getPluginManager().registerEvents(new CancelPortal(), this);
+        getServer().getPluginManager().registerEvents(new DeathEvent(), this);
+        getServer().getPluginManager().registerEvents(new PigKillTest(), this);
     }
 
     @Override
