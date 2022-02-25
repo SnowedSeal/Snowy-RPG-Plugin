@@ -1,0 +1,9 @@
+name: LoudSnowPluin
+version: 0.1
+author: LoudbookAndSnowedSeal
+main: me.loudsnow.mcplug.Main
+api-version: 1.18
+commands:
+  booktest:
+    description: Test for Book
+    usage: /booktest
