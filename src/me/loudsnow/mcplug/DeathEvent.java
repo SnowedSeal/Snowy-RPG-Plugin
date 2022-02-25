@@ -14,6 +14,6 @@ public class DeathEvent implements Listener {
     public void onPlayerDeath(PlayerDeathEvent event){
         String name = event.getEntity().getName();
         event.setKeepInventory(true);
-        event.setDeathMessage("" + ChatColor.RED + ChatColor.BOLD + name + " died! Feel bad for them!");
+        event.setDeathMessage("" + ChatColor.RED + ChatColor.BOLD + name + " died! Feel bad for them! :(");
     }
 }
