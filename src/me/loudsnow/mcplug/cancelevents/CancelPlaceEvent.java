@@ -1,13 +1,16 @@
-package me.loudsnow.mcplug;
+package me.loudsnow.mcplug.cancelevents;
 
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
 
-public class CancelBreakEvent implements Listener {
+public class CancelPlaceEvent implements Listener {
     @EventHandler
-    public void onBlockBreak(BlockBreakEvent event){
+    public void onBlockPlace(BlockPlaceEvent event){
         Player player = event.getPlayer();
         if (player.getDisplayName().equals("RGolden")) {
         }
@@ -15,9 +18,16 @@ public class CancelBreakEvent implements Listener {
         }
         else if (player.getDisplayName().equals("FabledLivid")) {
         }
+        else if (player.getDisplayName().equals("SnowedSeal")) {
+        }
+        else if (player.getDisplayName().equals("Milkshake578")) {
+        }
+        else if (player.getDisplayName().equals("lionylev")) {
+        }
         else {
             event.setCancelled(true);
 
         }
+
     }
 }
