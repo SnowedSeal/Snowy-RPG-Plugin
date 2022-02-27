@@ -18,7 +18,7 @@ public class NPC4 implements Listener {
             String uuid = entity.getUniqueId().toString();
             if (uuid.equals("76b8668f-7638-2635-a28d-421202fb5efd")) {
                 p.sendMessage("" + ChatColor.RED + ChatColor.BOLD + "Coming soon!");
-                Bukkit.broadcastMessage(uuid);
+
             }
 
         }

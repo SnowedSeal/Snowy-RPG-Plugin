@@ -18,7 +18,7 @@ public class NPC1 implements Listener {
             String uuid = entity.getUniqueId().toString();
             if (uuid.equals("14df8b0e-0bd7-27d4-81c6-e59fb8f0b208")) {
                 p.sendMessage("" + ChatColor.DARK_GREEN + ChatColor.BOLD + "[Gilbert] Welcome to the Snowy SMP!");
-                Bukkit.broadcastMessage(uuid);
+                
             }
 
         }

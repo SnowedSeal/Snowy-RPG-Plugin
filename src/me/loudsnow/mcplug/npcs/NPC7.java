@@ -9,18 +9,16 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class NPC5 implements Listener {
+public class NPC7 implements Listener {
     @EventHandler
-    public void onNpc5Click(PlayerInteractEntityEvent event) {
+    public void onNpcClick(PlayerInteractEntityEvent event) {
         Player p = (Player) event.getPlayer();
         if (event.getHand() == EquipmentSlot.HAND) {
             Entity entity = event.getRightClicked();
             String uuid = entity.getUniqueId().toString();
-            Bukkit.broadcastMessage(uuid);
-            if (uuid.equals("44bfafe8-d20a-2b0b-b4a0-4329933087ed")) {
-                p.sendMessage("" + ChatColor.RED + ChatColor.BOLD + "Coming soon!");
-
-
+            if (uuid.equals("76b8668f-7638-2635-a28d-421202fb5efd")) {
+                p.sendMessage("" + ChatColor.DARK_GREEN + ChatColor.BOLD + "I love food, dont you?");
+                p.sendMessage(""+ ChatColor.DARK_GREEN + ChatColor.BOLD + "Cake: 50 coins");
             }
 
         }
@@ -28,3 +26,4 @@ public class NPC5 implements Listener {
 
     }
 }
+

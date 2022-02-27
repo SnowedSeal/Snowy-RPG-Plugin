@@ -9,17 +9,15 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class NPC5 implements Listener {
+public class NPC6 implements Listener {
     @EventHandler
-    public void onNpc5Click(PlayerInteractEntityEvent event) {
+    public void onNpcClick(PlayerInteractEntityEvent event) {
         Player p = (Player) event.getPlayer();
         if (event.getHand() == EquipmentSlot.HAND) {
             Entity entity = event.getRightClicked();
             String uuid = entity.getUniqueId().toString();
-            Bukkit.broadcastMessage(uuid);
-            if (uuid.equals("44bfafe8-d20a-2b0b-b4a0-4329933087ed")) {
-                p.sendMessage("" + ChatColor.RED + ChatColor.BOLD + "Coming soon!");
-
+            if (uuid.equals("9ce81ce2-4527-2081-b2a8-e8034f382bd6")) {
+                p.sendMessage("" + ChatColor.DARK_GREEN + ChatColor.BOLD + "[Guard] I'm keeping my eye on you");
 
             }
 
@@ -28,3 +26,5 @@ public class NPC5 implements Listener {
 
     }
 }
+
+// dm on discord to text me

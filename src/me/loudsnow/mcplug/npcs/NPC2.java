@@ -17,8 +17,8 @@ public class NPC2 implements Listener {
             Entity entity = event.getRightClicked();
             String uuid = entity.getUniqueId().toString();
             if (uuid.equals("519e3c07-903e-2f02-b10e-bc4453f6f637")) {
-                p.sendMessage("" + ChatColor.RED + ChatColor.BOLD + "Coming soon!");
-                Bukkit.broadcastMessage(uuid);
+                p.openInventory(p.getEnderChest());
+
             }
 
         }
