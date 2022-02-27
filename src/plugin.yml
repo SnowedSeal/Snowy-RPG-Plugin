@@ -7,3 +7,9 @@ commands:
   booktest:
     description: Test for Book
     usage: /booktest
+  banker:
+    description: Get the bank (devs only)
+    usage: /banker
+  getwindstep:
+    description: Get Windstep [REMOVE]
+    usage: /getwindstep
