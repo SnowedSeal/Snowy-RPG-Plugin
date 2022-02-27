@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerArmorStandManipulateEvent;
-
+/*
 public class ArmorStandCancel implements Listener {
     @EventHandler
     public void onStandManipulation(PlayerArmorStandManipulateEvent event) {
@@ -17,3 +17,4 @@ public class ArmorStandCancel implements Listener {
         }
     }
 }
+*/
