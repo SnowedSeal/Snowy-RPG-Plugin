@@ -1,4 +1,4 @@
-package me.loudsnow.mcplug;
+package me.loudsnow.mcplug.cancelevents;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
