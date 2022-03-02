@@ -1,12 +1,12 @@
 package me.loudsnow.mcplug.windstep;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
 
@@ -22,7 +22,7 @@ public class WindstepListener implements Listener {
         if (p.isSneaking()){
             if (p.getInventory().getBoots() != null){
                 if (event.getPlayer().isOnGround()) {
-                    if (p.getInventory().getBoots().getItemMeta().getDisplayName().equals("" + ChatColor.GRAY + ChatColor.BOLD + "Windstep")) {
+                    if (p.getInventory().getBoots().getItemMeta().getDisplayName().equals("" + ChatColor.WHITE + ChatColor.BOLD + "Windstep")) {
 
                         if (cd.containsKey(p.getUniqueId().toString())){
                             p.sendMessage(ChatColor.RED + "This object is on cooldown!");
@@ -34,12 +34,17 @@ public class WindstepListener implements Listener {
                             p.setVelocity(dir.multiply(2));
 
                             cd.put(p.getUniqueId().toString(), 0);
+                            p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 40, 0));
+                            World world = p.getWorld();
+                            Location location = p.getLocation();
+                            world.spawnParticle(Particle.CLOUD, location, 10, 0.2, 0.2, 0.2, 0.2);
 
 
                             Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
                                 @Override
                                 public void run() {
                                     cd.remove(p.getUniqueId().toString());
+                                    p.sendMessage(ChatColor.GREEN + "Windstep is no longer on cooldown!");
 
 
                                 }
@@ -52,5 +57,5 @@ public class WindstepListener implements Listener {
         }
     }
 
-//Loud what is this code for? teleport boots when crouch it launches you
+
 }

@@ -19,13 +19,14 @@ public class WindstepCommand implements CommandExecutor {
             Player p = (Player) sender;
             ItemStack windstep = new ItemStack(Material.LEATHER_BOOTS);
             LeatherArmorMeta meta1 = (LeatherArmorMeta) windstep.getItemMeta();
-            meta1.setDisplayName("" + ChatColor.GRAY + ChatColor.BOLD + "Windstep");
-            meta1.setColor(Color.BLACK);
+            meta1.setDisplayName("" + ChatColor.WHITE + ChatColor.BOLD + "Windstep");
+            meta1.setColor(Color.WHITE);
             ArrayList<String> lore = new ArrayList();
-            lore.add("3 Second Cooldown");
+            lore.add("5 Second Cooldown");
             lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "Use CROUCH to activate warp ability.");
             lore.add("" + ChatColor.YELLOW + "Launches you forward.");
             meta1.setLore(lore);
+            meta1.setUnbreakable(true);
             windstep.setItemMeta(meta1);
             p.getInventory().addItem(windstep);
 
