@@ -1,4 +1,4 @@
-package me.loudsnow.mcplug;
+package me.loudsnow.mcplug.cancelevents;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
