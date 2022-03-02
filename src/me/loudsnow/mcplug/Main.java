@@ -1,9 +1,11 @@
 package me.loudsnow.mcplug;
 
-import me.loudsnow.mcplug.cancelevents.CancelBreakEvent;
-import me.loudsnow.mcplug.cancelevents.CancelPlaceEvent;
-import me.loudsnow.mcplug.cancelevents.CancelPortal;
+import me.loudsnow.mcplug.cancelevents.*;
+import me.loudsnow.mcplug.meteorslam.MeteorSlamCommand;
+import me.loudsnow.mcplug.meteorslam.MeteorSlamListener;
 import me.loudsnow.mcplug.npcs.*;
+import me.loudsnow.mcplug.shadowleap.ShadowleapCommand;
+import me.loudsnow.mcplug.shadowleap.ShadowleapListener;
 import me.loudsnow.mcplug.windstep.WindstepCommand;
 import me.loudsnow.mcplug.windstep.WindstepListener;
 import org.bukkit.command.ConsoleCommandSender;
@@ -19,6 +21,10 @@ public class Main extends JavaPlugin {
     public static Main instance;
     public static Map<String, Integer> bank = new HashMap<String, Integer>();
     public static HashMap<String, Integer> cd = new HashMap<>();
+    public static HashMap<String, Integer> cd1 = new HashMap<>();
+    public static HashMap<String, Integer> cd2 = new HashMap<>();
+    public static HashMap<String, Integer> hitground = new HashMap<>();
+
 
     @Override
     public void onEnable() {
@@ -38,6 +44,14 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new NPC6(), this);
         this.getCommand("getwindstep").setExecutor(new WindstepCommand());
         getServer().getPluginManager().registerEvents(new WindstepListener(), this);
+        getServer().getPluginManager().registerEvents(new CancelDropEvent(), this);
+        getServer().getPluginManager().registerEvents(new CancelFallDamage(), this);
+        this.getCommand("getmeteorslam").setExecutor(new MeteorSlamCommand());
+        this.getCommand("getshadowleap").setExecutor(new ShadowleapCommand());
+        getServer().getPluginManager().registerEvents(new MeteorSlamListener(), this);
+        getServer().getPluginManager().registerEvents(new CancelBedEnter(), this);
+        getServer().getPluginManager().registerEvents(new ShadowleapListener(), this);
+
 
 
 

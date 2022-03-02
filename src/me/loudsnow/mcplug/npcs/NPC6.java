@@ -17,7 +17,7 @@ public class NPC6 implements Listener {
             Entity entity = event.getRightClicked();
             String uuid = entity.getUniqueId().toString();
             if (uuid.equals("9ce81ce2-4527-2081-b2a8-e8034f382bd6")) {
-                p.sendMessage("" + ChatColor.DARK_GREEN + ChatColor.BOLD + "[Guard] I'm keeping my eye on you");
+                p.sendMessage("" + ChatColor.GRAY + ChatColor.BOLD + "[Guard] I'm keeping my eye on you");
 
             }
 
