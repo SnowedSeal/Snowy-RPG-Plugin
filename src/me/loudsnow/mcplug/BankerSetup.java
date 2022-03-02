@@ -3,9 +3,11 @@ package me.loudsnow.mcplug;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.attribute.Attribute;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -39,7 +41,6 @@ public class BankerSetup implements CommandExecutor {
             ItemStack deposit = new ItemStack(Material.HOPPER_MINECART);
             ItemMeta meta1 = deposit.getItemMeta();
             meta1.setDisplayName(ChatColor.BOLD + "Deposit Coins");
-            deposit.setItemMeta(meta1);
 
 
 
