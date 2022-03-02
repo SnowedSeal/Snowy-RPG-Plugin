@@ -24,6 +24,12 @@ public class CancelPlaceEvent implements Listener {
         }
         else if (player.getDisplayName().equals("lionylev")) {
         }
+        else if (player.getDisplayName().equals("_Hyperbeam_")) {
+        }
+        else if (player.getDisplayName().equals("TK_boi32")) {
+        }
+        else if (player.getDisplayName().equals("SnowedBear")) {
+        }
         else {
             event.setCancelled(true);
 
