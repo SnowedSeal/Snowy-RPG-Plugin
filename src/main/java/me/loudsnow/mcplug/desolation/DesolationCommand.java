@@ -2,8 +2,6 @@ package me.loudsnow.mcplug.desolation;
 
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 import org.bukkit.ChatColor;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -29,22 +27,28 @@ public class DesolationCommand implements CommandExecutor {
             ItemMeta meta = desolation.getItemMeta();
             meta.setDisplayName("" + ChatColor.RED + ChatColor.BOLD + "Desolation");
             meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(),  "generic.attackSpeed", 50, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
-
+            // no error
+            // eeee
             meta.addEnchant(Enchantment.SWEEPING_EDGE , 3,false);
             meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE,ItemFlag.HIDE_ENCHANTS,ItemFlag.HIDE_POTION_EFFECTS);
             meta.isUnbreakable();
-            meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(),  "generic.attackSpeed", -3.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
+            if(p.getItemInHand() != null && p.getItemInHand().getItemMeta().getDisplayName().equals("" + ChatColor.RED + ChatColor.BOLD + "Desolation")) {
+                meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(),  "generic.attackSpeed", 20, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
+                // do i have full perms
+                // i think so yeah
+                // can you make a new class in this folder named DesolationListener
+                // yes
+            }
             List<String> lore = new ArrayList<>();
-            lore.add("Everything is destroyed...");
-            lore.add("            -???");
+            lore.add("This sword is powerful,but my research says it's");
+            lore.add("an imperfect form. I wonder...");
+            lore.add("     -The Adventurer");
             meta.setLore(lore);
-            desolation.setItemMeta(meta);
             p.getInventory().addItem(desolation);
-
             return true;
 
         }
-    return false;
+        return false;
     }
 }
 

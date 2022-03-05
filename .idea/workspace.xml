@@ -10,47 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a66c3e81-1ad4-4a0d-acfd-8fe6b52f1822" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Loud and Snow's SMP/me/loudsnow/mcplug/BankerSetup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Loud and Snow's SMP/me/loudsnow/mcplug/BankerSetup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Loud and Snow's SMP/me/loudsnow/mcplug/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Loud and Snow's SMP/me/loudsnow/mcplug/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Loud and Snow's SMP/me/loudsnow/mcplug/cancelevents/CancelBreakEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Loud and Snow's SMP/me/loudsnow/mcplug/cancelevents/CancelBreakEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Loud and Snow's SMP/me/loudsnow/mcplug/cancelevents/CancelPlaceEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Loud and Snow's SMP/me/loudsnow/mcplug/cancelevents/CancelPlaceEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Loud and Snow's SMP/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Loud and Snow's SMP/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/BankerInventory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/BankerSetup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/DeathEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/JoinEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/JoinTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/PigKillTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/TraderSpawn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/cancelevents/ArmorStandCancel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/cancelevents/CancelBedEnter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/cancelevents/CancelBreakEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/cancelevents/CancelDropEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/cancelevents/CancelFallDamage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/cancelevents/CancelItemFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/cancelevents/CancelPlaceEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/cancelevents/CancelPortal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/cancelevents/CancelTnt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/desolation/DesolationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/desolation/DesolationCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/desolation/DesolationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/desolation/DesolationListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/desolation/DesolationCommand.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/desolation/DesolationListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/hashmap/HashMaps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/meteorslam/MeteorSlamCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/meteorslam/MeteorSlamListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/npcs/BankerListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/npcs/NPC1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/npcs/NPC2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/npcs/NPC3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/npcs/NPC4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/npcs/NPC5.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/npcs/NPC6.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/npcs/NPC7.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/shadowleap/ShadowleapCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/shadowleap/ShadowleapListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/windstep/WindstepCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/windstep/WindstepListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plugin.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/starterdagger/starterdaggerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/starterdagger/starterdaggerCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/startersword/starterswordCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/startersword/starterswordCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/loudsnow/mcplug/truedeso/trueDesoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/truedeso/trueDesoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +49,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -96,7 +74,6 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/me/loudsnow/mcplug/shadowleap" />
     <property name="project.structure.last.edited" value="Project" />
@@ -110,6 +87,7 @@
       <recent name="C:\Users\Loudbook\Desktop\SpigotPlugins\Loud and Snow's SMP\src\me\loudsnow\mcplug" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Loudbook\Desktop\SpigotPlugins\SnowyRPG\Snowy-RPG-Plugin\src\main\java\me\loudsnow\mcplug" />
       <recent name="C:\Users\Loudbook\Desktop\SpigotPlugins\Loud and Snow's SMP\src" />
       <recent name="C:\Users\Loudbook\Desktop\SpigotPlugins\Loud and Snow's SMP\src\me\loudsnow\mcplug\cancelevents" />
       <recent name="C:\Users\Loudbook\Desktop\SpigotPlugins\Loud and Snow's SMP\src\me\loudsnow\mcplug" />

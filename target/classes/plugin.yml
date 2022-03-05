@@ -22,3 +22,14 @@ commands:
   getdesolation:
     description: Get Desolation
     usage: /getdesolation
+  gettruedesolation:
+    description: Get Awakened Desolation
+    usage: /gettruedesolation
+
+  getstarterdagger:
+    description: Get basic dagger
+    usage: /getstarterdagger
+
+  getstartersword:
+    description: Get basic sword
+    usage: /getstartersword
