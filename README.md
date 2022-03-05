@@ -7,3 +7,5 @@ A plugin for the Snowy RPG made by Loudbook!
 ## Community:
 
 <img alt="Discord" src="https://img.shields.io/discord/945036462141890601?color=blue&label=Discord&style=for-the-badge">
+
+**Join:** https://discord.gg/Qd8Juas6mA
