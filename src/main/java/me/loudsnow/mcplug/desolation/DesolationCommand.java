@@ -34,9 +34,13 @@ public class DesolationCommand implements CommandExecutor {
             meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(),  "generic.attackSpeed", -3.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
 
             List<String> lore = new ArrayList<>();
-            lore.add("This sword is powerful,but my research says it's");
-            lore.add("an imperfect form. I wonder...");
-            lore.add("     -The Adventurer");
+            lore.add("20 Second Cooldown");
+            lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "Right click to activate Desolation's true power.");
+            lore.add("" + ChatColor.YELLOW + "Increases your damage and your attack speed.");
+            lore.add("");
+            lore.add(ChatColor.DARK_GRAY + "This sword is powerful, but my research says it's");
+            lore.add(ChatColor.DARK_GRAY + "an imperfect form. I wonder...");
+            lore.add(ChatColor.DARK_GRAY + "            -The Adventurer");
             meta.setLore(lore);
             desolation.setItemMeta(meta);
             p.getInventory().addItem(desolation);
