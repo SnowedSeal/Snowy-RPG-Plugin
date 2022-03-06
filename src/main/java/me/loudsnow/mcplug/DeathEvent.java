@@ -15,6 +15,6 @@ public class DeathEvent implements Listener {
         Player p = event.getEntity();
         String name = event.getEntity().getName();
         event.setKeepInventory(true);
-        event.setDeathMessage("" + ChatColor.RED + ChatColor.BOLD + name + " died due to " + p.getLastDamageCause());
+        event.setDeathMessage("" + ChatColor.RED + ChatColor.BOLD + name + " died!");
     }
 }

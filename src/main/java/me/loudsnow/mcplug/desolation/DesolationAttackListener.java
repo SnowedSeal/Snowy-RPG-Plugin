@@ -18,7 +18,7 @@ public class DesolationAttackListener implements Listener {
 
 
             } else {
-                if (p.getItemInHand() != null && p.getItemInHand().getItemMeta().getDisplayName().equals("" + ChatColor.RED + ChatColor.BOLD + "Desolation")) {
+                if (p.getItemInHand().getItemMeta() != null && p.getItemInHand().getItemMeta().getDisplayName().equals("" + ChatColor.RED + ChatColor.BOLD + "Desolation")) {
                     cd5.put(p.getUniqueId().toString(), 0);
 
                     Location location = p.getLocation();
