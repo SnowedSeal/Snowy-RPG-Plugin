@@ -1,3 +1,4 @@
+me\loudsnow\mcplug\truedeso\trueDesoListener.class
 me\loudsnow\mcplug\npcs\NPC5.class
 me\loudsnow\mcplug\cancelevents\CancelBreakEvent.class
 me\loudsnow\mcplug\TraderSpawn.class
@@ -23,6 +24,7 @@ me\loudsnow\mcplug\meteorslam\MeteorSlamListener$2.class
 me\loudsnow\mcplug\startersword\starterswordCommand.class
 me\loudsnow\mcplug\windstep\WindstepListener.class
 me\loudsnow\mcplug\cancelevents\CancelFallDamage.class
+me\loudsnow\mcplug\desolation\DesolationListener$1.class
 me\loudsnow\mcplug\PigKillTest.class
 me\loudsnow\mcplug\npcs\NPC6.class
 me\loudsnow\mcplug\Main.class
