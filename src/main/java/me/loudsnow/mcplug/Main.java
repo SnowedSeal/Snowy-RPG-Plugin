@@ -84,6 +84,7 @@ public class Main extends JavaPlugin {
         // HashMaps.bank = loadHashMap("bank");
 
         ConsoleCommandSender console = getServer().getConsoleSender();
+        System.out.println(bank.get("Loudbook"));
 
 
     }

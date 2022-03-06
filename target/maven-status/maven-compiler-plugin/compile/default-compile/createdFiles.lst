@@ -8,7 +8,6 @@ me\loudsnow\mcplug\cancelevents\CancelItemFrame.class
 me\loudsnow\mcplug\npcs\NPC2.class
 me\loudsnow\mcplug\meteorslam\MeteorSlamListener.class
 me\loudsnow\mcplug\truedeso\trueDesoCommand.class
-me\loudsnow\mcplug\salvation\salvationCommand.class
 me\loudsnow\mcplug\desolation\DesolationAbilityListener.class
 me\loudsnow\mcplug\hashmap\HashMaps.class
 me\loudsnow\mcplug\npcs\NPC3.class

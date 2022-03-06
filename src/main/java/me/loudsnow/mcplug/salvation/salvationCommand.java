@@ -26,10 +26,10 @@ public class salvationCommand implements CommandExecutor {
             ItemStack salvation = new ItemStack(Material.GOLD_INGOT, 1);
             ItemMeta meta = salvation.getItemMeta();
             meta.setDisplayName("" + ChatColor.GOLD +"Salvation");
-            //if(p.getEquipment().getItemInOffHand() != null && p.getEquipment().getItemInOffHand().getItemMeta().getDisplayName().equals("" + ChatColor.GOLD +"Salvation")) {
+            if(p.getEquipment().getItemInOffHand() != null && p.getEquipment().getItemInOffHand().getItemMeta().getDisplayName().equals("" + ChatColor.GOLD +"Salvation")) {
                 meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "generic.armorValue", 2, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND));
                 meta.addAttributeModifier(Attribute.GENERIC_MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), "generic.healthValue", 5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND));
-            //}
+            }
             meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
             meta.isUnbreakable();
             List<String> lore = new ArrayList<>();
@@ -37,7 +37,6 @@ public class salvationCommand implements CommandExecutor {
             lore.add("" + ChatColor.GOLD + ChatColor.BOLD +"to have incredible healing powers.");
             lore.add("" + ChatColor.YELLOW +"Use in offhand it gain buffs!");
             meta.setLore(lore);
-            salvation.setItemMeta(meta);
             p.getInventory().addItem(salvation);
             return true;
         }
