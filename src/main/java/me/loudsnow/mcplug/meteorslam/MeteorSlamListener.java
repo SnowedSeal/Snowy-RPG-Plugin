@@ -52,7 +52,11 @@ public class MeteorSlamListener implements Listener {
                                     List<Entity> nearby = p.getNearbyEntities(4, 4, 4);
                                     for (Entity tmp : nearby)
                                         if (tmp instanceof Damageable)
-                                            ((Damageable) tmp).damage(25);
+                                            if (tmp instanceof Player) {
+
+                                            } else {
+                                                ((Damageable) tmp).damage(25);
+                                                }
                                     world.spawnParticle(Particle.EXPLOSION_LARGE, location, 10, 1, 1, 1, 1);
                                     hitground.put(p.getUniqueId().toString(), 1);
                                 this.counter--;
