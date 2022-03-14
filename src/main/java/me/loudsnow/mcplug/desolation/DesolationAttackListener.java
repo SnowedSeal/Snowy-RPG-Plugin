@@ -1,6 +1,7 @@
 package me.loudsnow.mcplug.desolation;
 
 import org.bukkit.*;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
@@ -12,8 +13,9 @@ import static me.loudsnow.mcplug.Main.*;
 public class DesolationAttackListener implements Listener {
     @EventHandler
     public void onDesolationAttack(EntityDamageByEntityEvent e) {
-        Player p = (Player) e.getDamager();
-        if (p instanceof Player) {
+        Entity entity = (Entity) e.getDamager();
+        if (entity instanceof Player) {
+            Player p = (Player) e.getDamager();
             if (cd5.containsKey(p.getUniqueId().toString())) {
 
 
