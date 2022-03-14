@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>SnowyRPG</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -20,6 +20,13 @@
             <id>spigot-repo</id>
 
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+
+        </repository>
+        <repository>
+
+            <id>mongodb-driver-sync</id>
+
+            <url>https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync/4.5.0</url>
 
         </repository>
 
@@ -42,6 +49,14 @@
 
         </dependency>
 
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>4.5.0</version>
+        </dependency>
+
+
     </dependencies>
+
 
 </project>
