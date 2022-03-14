@@ -28,7 +28,7 @@ public class trueDesoCommand implements CommandExecutor {
             ItemMeta meta = truedesolation.getItemMeta();
             meta.setDisplayName("" + ChatColor.RED + ChatColor.BOLD + "Awakened Desolation");
             meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(),  "generic.attackSpeed", 100, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
-            meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(),  "generic.attackSpeed", -3, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
+            meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(),  "generic.attackSpeed", -3.55, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
 
             meta.addEnchant(Enchantment.SWEEPING_EDGE , 5,true);
             meta.addEnchant(Enchantment.FIRE_ASPECT , 3,true);

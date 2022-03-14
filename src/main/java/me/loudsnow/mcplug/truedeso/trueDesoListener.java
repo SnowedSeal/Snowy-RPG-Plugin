@@ -18,7 +18,7 @@ public class trueDesoListener implements Listener {
     public void onDesolationAttack(PlayerInteractEvent e) {
         Player p = e.getPlayer();
         if (e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK) {
-            if (p.getItemInHand() != null && p.getItemInHand().getItemMeta().getDisplayName().equals("" + ChatColor.RED + ChatColor.BOLD + "Awakened Desolation")) {
+            if (p.getItemInHand().getItemMeta() != null && p.getItemInHand().getItemMeta().getDisplayName().equals("" + ChatColor.RED + ChatColor.BOLD + "Awakened Desolation")) {
 
                 if (cd4.containsKey(p.getUniqueId().toString())) {
                     p.sendMessage("" + ChatColor.RED + ChatColor.BOLD + "This object is on cooldown!");
@@ -27,8 +27,7 @@ public class trueDesoListener implements Listener {
                     Location location = p.getLocation();
                     World world = p.getWorld();
                     world.spawnParticle(Particle.LAVA, location, 20, 1, 1, 1, 1);
-                    Double damage = p.getLastDamage() / 10;
-                    p.damage(damage);
+
                 }
             }
         }
