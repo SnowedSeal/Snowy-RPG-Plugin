@@ -4,6 +4,7 @@ import me.loudsnow.mcplug.Main;
 import org.bukkit.*;
 import org.bukkit.entity.Damageable;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Horse;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -28,7 +29,7 @@ public class MeteorSlamListener implements Listener {
         Player p = event.getPlayer();
         if (event.getHand() == EquipmentSlot.HAND) {
             if (event.getPlayer().isOnGround()) {
-                if (p.getItemInHand() != null && p.getItemInHand().getItemMeta() != null && p.getItemInHand().getItemMeta().getDisplayName().equals("" + ChatColor.GOLD + ChatColor.BOLD + "Meteor Slam")) {
+                if (p.getItemInHand().getItemMeta() != null && p.getItemInHand().getItemMeta().getDisplayName().equals("" + ChatColor.GOLD + ChatColor.BOLD + "Meteor Slam")) {
                     if (cd1.containsKey(p.getUniqueId().toString())) {
                         p.sendMessage(ChatColor.RED + "This object is on cooldown!");
                     } else {
@@ -52,8 +53,10 @@ public class MeteorSlamListener implements Listener {
                                     List<Entity> nearby = p.getNearbyEntities(4, 4, 4);
                                     for (Entity tmp : nearby)
                                         if (tmp instanceof Damageable)
-                                            if (tmp instanceof Player) {
-
+                                            if (tmp instanceof Player || tmp instanceof Horse) {
+                                                if (tmp.getUniqueId().toString().equals("56ff4351-bebe-2627-86b0-181cc8d4ff1c")){
+                                                    ((Damageable) tmp).damage(25);
+                                                }
                                             } else {
                                                 ((Damageable) tmp).damage(25);
                                                 }
