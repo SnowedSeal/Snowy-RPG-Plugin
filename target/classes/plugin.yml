@@ -31,3 +31,24 @@ commands:
   getstartersword:
     description: Get basic sword
     usage: /getstartersword
+  getrookieglider:
+    description: Get Rookie Glider
+    usage: /getrookieglider
+  getflameblade:
+    description: Get Flameblade
+    usage: /getflameblade
+  getsalvation:
+    description: Get Salvation
+    usage: /getsalvation
+  getforestsword:
+    description: Get Forest Sword
+    usage: /getforestsword
+  getglowingpendant:
+    description: Get Glowing Pendant
+    usage: /getglowingpendant
+  hashmaptest:
+    description: Test Hash Map
+    usage: /hashmashtest
+  whistle:
+    description: Summon Horse
+    usage: /whistle
