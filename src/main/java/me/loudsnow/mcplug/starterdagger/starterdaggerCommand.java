@@ -11,6 +11,8 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.scoreboard.Team;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -33,6 +35,8 @@ public class starterdaggerCommand implements CommandExecutor {
             meta.setLore(lore);
             basicdagger.setItemMeta(meta);
             p.getInventory().addItem(basicdagger);
+            Team team = p.getScoreboard().getTeam("Player");
+            team.addPlayer(p);
             return true;
 
         }
