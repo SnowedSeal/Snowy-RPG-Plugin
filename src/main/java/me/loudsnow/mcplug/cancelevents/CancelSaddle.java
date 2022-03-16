@@ -13,12 +13,7 @@ public class CancelSaddle implements Listener {
     public void onInventoryInteract(InventoryClickEvent e){
         Player p = (Player) e.getWhoClicked();
         if (e.getInventory() instanceof HorseInventory) {
-
-            if (e.getCurrentItem().equals(Material.SADDLE)){
-                e.setCancelled(true);
-
-
-            }
+            e.setCancelled(true);
         }
     }
 }

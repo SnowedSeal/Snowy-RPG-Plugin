@@ -1,10 +1,7 @@
 package me.loudsnow.mcplug;
 
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -36,31 +33,39 @@ public class Whistle implements CommandExecutor {
                     horse.setColor(Horse.Color.WHITE);
                     horse.setTarget(p);
                     horse.setJumpStrength(0.8);
-                    horse.setHealth(10);
+                    horse.setHealth(14);
                     horse.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(0.3);
+                    horse.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(14);
                     Bukkit.getScheduler().runTaskLater(instance, new Runnable() {
                         @Override
                         public void run() {
                             cd7.remove(p.getUniqueId().toString());
-
+                            p.sendMessage(ChatColor.GREEN + "Your whistle is no longer on cooldown!");
                         }
                     }, 600);
                 } else {
                     p.sendMessage(ChatColor.RED + "You don't own a horse!");
                 }
-
             } else {
-                for(World w : Bukkit.getWorlds()) {
+                for (World w : Bukkit.getWorlds()) {
                     for (Entity entity : w.getEntities()) {
                         if (entity instanceof Horse) {
                             if (((Horse) entity).getOwner() != null) {
                                 if (((Horse) entity).getOwner() == p) {
+                                    double locX = entity.getLocation().getX();
+                                    double locY = entity.getLocation().getY();
+                                    double locZ = entity.getLocation().getZ();
+
                                     entity.teleport(p.getLocation());
-                                    p.sendMessage(ChatColor.RED + "Summoning Horse!");
+                                    p.sendMessage(ChatColor.GREEN + "Summoning Horse!");
+                                    horsealive.put(p.getUniqueId().toString(), 0);
+                                    cd7.put(p.getUniqueId().toString(), 0);
+                                    new Location(Bukkit.getWorld("spigot_1_18_1_1651099"), locX, locY, locZ).getChunk().unload();
                                     Bukkit.getScheduler().runTaskLater(instance, new Runnable() {
                                         @Override
                                         public void run() {
                                             cd7.remove(p.getUniqueId().toString());
+                                            p.sendMessage(ChatColor.GREEN + "Your whistle is no longer on cooldown!");
 
                                         }
                                     }, 600);
@@ -74,6 +79,7 @@ public class Whistle implements CommandExecutor {
         } else {
             p.sendMessage(ChatColor.RED + "You need to wait 30 seconds between use!");
         }
-    return true;
+        return true;
     }
+
 }

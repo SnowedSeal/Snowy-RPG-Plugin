@@ -36,7 +36,7 @@ public class NPC8 implements Listener {
                     meta.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Buy a horse");
                     List<String> lore = new ArrayList<>();
                     lore.add("");
-                    lore.add("" + ChatColor.GRAY + ChatColor.BOLD + "128 Coins for 1 horse. Color is randomized.");
+                    lore.add("" + ChatColor.RED + "128 Coins for 1 horse.");
                     meta.setLore(lore);
                     buyhorse.setItemMeta(meta);
                     inv.setItem(4, buyhorse);

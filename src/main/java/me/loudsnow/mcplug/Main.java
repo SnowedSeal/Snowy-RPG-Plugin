@@ -32,6 +32,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Horse;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
+import org.bukkit.event.world.ChunkUnloadEvent;
 import org.bukkit.inventory.HorseInventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -45,8 +46,8 @@ public class Main extends JavaPlugin {
     public static File file;
     public static Main instance;
     public static Map<String, Integer> bank = new HashMap<String, Integer>();
-    public static HashMap<String, Integer> cd = new HashMap<>();
     public static HashMap<String, Integer> cd1 = new HashMap<>();
+    public static HashMap<String, Integer> cd = new HashMap<>();
     public static HashMap<String, Integer> cd2 = new HashMap<>();
     public static HashMap<String, Integer> hitground = new HashMap<>();
     public static HashMap<String, Integer> cd3 = new HashMap<>();
@@ -58,10 +59,12 @@ public class Main extends JavaPlugin {
     public static HashMap<String, Integer> cd8 = new HashMap<>();
     public static HashMap<String, Integer> horse = new HashMap<>();
     public static HashMap<String, Integer> horsealive = new HashMap<>();
+    public static HashMap<String, Integer> player2 = new HashMap<>();
     public static HashMap<UUID, UUID> drop = new HashMap<>();
     public static boolean desolationdmg = false;
     public static Map<String, String> player = new HashMap<String, String>();
     public static Map<String, String> horseowner = new HashMap<String, String>();
+    public static Map<String, Integer> horseint = new HashMap<String, Integer>();
 
 
     @Override
@@ -70,6 +73,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CancelPortal(), this);
         getServer().getPluginManager().registerEvents(new DeathEvent(), this);
         getServer().getPluginManager().registerEvents(new PigKillTest(), this);
+        getServer().getPluginManager().registerEvents(new JoinEvent(), this);
         // getServer().getPluginManager().registerEvents(new ArmorStandCancel(), this);
         getServer().getPluginManager().registerEvents(new CancelBreakEvent(), this);
         getServer().getPluginManager().registerEvents(new CancelPlaceEvent(), this);
@@ -118,7 +122,12 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CancelPVP(), this);
         getServer().getPluginManager().registerEvents(new CancelHorseDamage(), this);
         getServer().getPluginManager().registerEvents(new CancelSaddle(), this);
-
+        getServer().getPluginManager().registerEvents(new CancelUnload(), this);
+        getServer().getPluginManager().registerEvents(new CancelBerryHarvest(), this);
+        getServer().getPluginManager().registerEvents(new BankerInventory(), this);
+        getServer().getPluginManager().registerEvents(new BankerListener(), this);
+        getServer().getPluginManager().registerEvents(new BankerWithdraw(), this);
+        getServer().getPluginManager().registerEvents(new BankerDeposit(), this);
         Properties properties = new Properties();
         try {
             properties.load(new FileInputStream("data.properties"));
@@ -130,6 +139,15 @@ public class Main extends JavaPlugin {
             player.put(key, properties.get(key).toString());
         }
 
+        Properties properties2 = new Properties();
+        try {
+            properties2.load(new FileInputStream("bank.properties"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        for (String key : properties2.stringPropertyNames()) {
+            bank.put(key, Integer.parseInt((String) properties2.get(key)));
+        }
 
         Properties properties1 = new Properties();
         try {
@@ -143,9 +161,10 @@ public class Main extends JavaPlugin {
         }
 
 
-
+/*
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable(){
             public void run(){
+
                 for (Player p : Bukkit.getOnlinePlayers()){
                     ItemStack power = new ItemStack(Material.BLAZE_POWDER);
                     ItemMeta meta = power.getItemMeta();
@@ -178,19 +197,22 @@ public class Main extends JavaPlugin {
 
             }
         }, 0L, 5L);
-
+*/
 
         // HashMaps.bank = loadHashMap("bank");
 
         ConsoleCommandSender console = getServer().getConsoleSender();
-
-
+        console.sendMessage("================================");
+        console.sendMessage("Snowy RPG Plugin Enabled");
+        console.sendMessage("Version 1.2");
+        console.sendMessage("================================");
     }
 
     @Override
     public void onDisable() {
         Properties properties = new Properties();
         Properties properties1 = new Properties();
+        Properties properties2 = new Properties();
         ConsoleCommandSender console = getServer().getConsoleSender();
         console.sendMessage("Saving Hashmap");
 
@@ -212,6 +234,16 @@ public class Main extends JavaPlugin {
 
         try {
             properties1.store(new FileOutputStream("horse.properties"), null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        for (Map.Entry<String, Integer> entry : bank.entrySet()) {
+            properties2.put(entry.getKey(), entry.getValue().toString());
+        }
+
+        try {
+            properties2.store(new FileOutputStream("bank.properties"), null);
         } catch (IOException e) {
             e.printStackTrace();
 

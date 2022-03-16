@@ -1,10 +1,11 @@
 me\loudsnow\mcplug\truedeso\trueDesoListener.class
-me\loudsnow\mcplug\Main$1.class
 me\loudsnow\mcplug\cancelevents\CancelHorseRide.class
+me\loudsnow\mcplug\cancelevents\CancelUnload$1.class
 me\loudsnow\mcplug\flameblade\FlamebladeListener.class
 me\loudsnow\mcplug\salvation\SalvationCommand.class
 me\loudsnow\mcplug\TraderSpawn.class
 me\loudsnow\mcplug\npcs\NPC7.class
+me\loudsnow\mcplug\npcs\HorseListener$2.class
 me\loudsnow\mcplug\truedeso\trueDesoCommand.class
 me\loudsnow\mcplug\desolation\DesolationAbilityListener.class
 me\loudsnow\mcplug\hashmap\HashMaps.class
@@ -13,6 +14,7 @@ me\loudsnow\mcplug\windstep\WindstepListener$1.class
 me\loudsnow\mcplug\cancelevents\CancelPortal.class
 me\loudsnow\mcplug\rookieglider\RookieGliderListener$1.class
 me\loudsnow\mcplug\cancelevents\CancelPlaceEvent.class
+me\loudsnow\mcplug\npcs\BankerWithdraw.class
 me\loudsnow\mcplug\meteorslam\MeteorSlamListener$1.class
 me\loudsnow\mcplug\Whistle$1.class
 me\loudsnow\mcplug\cancelevents\CancelTnt.class
@@ -20,6 +22,7 @@ me\loudsnow\mcplug\forestsword\ForestSwordCommand.class
 me\loudsnow\mcplug\meteorslam\MeteorSlamListener$2.class
 me\loudsnow\mcplug\cancelevents\CancelPVP.class
 me\loudsnow\mcplug\flameblade\FlamebladeListener$2.class
+me\loudsnow\mcplug\cancelevents\CancelUnload.class
 me\loudsnow\mcplug\glowingpendant\GlowingPendantCommand.class
 me\loudsnow\mcplug\npcs\NPC6.class
 me\loudsnow\mcplug\cancelevents\CancelHorseDamage.class
@@ -28,6 +31,8 @@ me\loudsnow\mcplug\cancelevents\CancelItemPickup.class
 me\loudsnow\mcplug\shadowleap\ShadowleapListener.class
 me\loudsnow\mcplug\desolation\DesolationCommand.class
 me\loudsnow\mcplug\TrainingDummy.class
+me\loudsnow\mcplug\cancelevents\CancelBerryHarvest.class
+me\loudsnow\mcplug\npcs\BankerDeposit.class
 me\loudsnow\mcplug\windstep\WindstepCommand.class
 me\loudsnow\mcplug\TrainingDummy$1.class
 me\loudsnow\mcplug\npcs\NPC5.class
@@ -44,12 +49,10 @@ me\loudsnow\mcplug\flameblade\FlamebladeCommand.class
 me\loudsnow\mcplug\meteorslam\MeteorSlamListener.class
 me\loudsnow\mcplug\npcs\NPC8.class
 me\loudsnow\mcplug\QuitEvent.class
-me\loudsnow\mcplug\Main$3.class
 me\loudsnow\mcplug\cancelevents\CancelSaddle.class
 me\loudsnow\mcplug\BankerSetup.class
 me\loudsnow\mcplug\shadowleap\ShadowleapListener$1.class
 me\loudsnow\mcplug\rookieglider\RookieGliderListener.class
-me\loudsnow\mcplug\cancelevents\PlayerDropEvent.class
 me\loudsnow\mcplug\DeathEvent.class
 me\loudsnow\mcplug\startersword\starterswordCommand.class
 me\loudsnow\mcplug\desolation\DesolationAttackListener.class
@@ -59,7 +62,6 @@ me\loudsnow\mcplug\cancelevents\CancelFallDamage.class
 me\loudsnow\mcplug\PigKillTest.class
 me\loudsnow\mcplug\desolation\DesolationAttackListener$1.class
 me\loudsnow\mcplug\HorseDeath.class
-me\loudsnow\mcplug\Main$2.class
 me\loudsnow\mcplug\npcs\HorseListener.class
 me\loudsnow\mcplug\Main.class
 me\loudsnow\mcplug\cancelevents\CancelBedEnter.class
@@ -67,6 +69,7 @@ me\loudsnow\mcplug\shadowleap\ShadowleapCommand.class
 me\loudsnow\mcplug\TestHashCommand.class
 me\loudsnow\mcplug\npcs\BankerListener.class
 me\loudsnow\mcplug\npcs\NPC1.class
+me\loudsnow\mcplug\npcs\BankerInventory.class
 me\loudsnow\mcplug\JoinEvent.class
 me\loudsnow\mcplug\desolation\DesolationAbilityListener$1.class
 me\loudsnow\mcplug\npcs\NPC4.class

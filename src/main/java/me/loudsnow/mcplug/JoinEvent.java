@@ -14,8 +14,11 @@ import static me.loudsnow.mcplug.Main.horseowner;
 public class JoinEvent implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
-        Player p = (Player) e.getPlayer();
-        p.sendMessage(ChatColor.YELLOW + "Use /whistle to summon your horse!");
+        Player p = e.getPlayer();
+        e.setJoinMessage("" + ChatColor.GREEN + ChatColor.BOLD + p.getName() + " joined the server!");
+        if (horseowner.containsKey(p.getUniqueId().toString())) {
+            p.sendMessage(ChatColor.YELLOW + "Use /whistle to summon your horse!");
 
+        }
     }
 }
