@@ -18,47 +18,43 @@ import static me.loudsnow.mcplug.Main.bank;
 public class NPC2 implements Listener {
     @EventHandler
     public void onNpc2Click(PlayerInteractEntityEvent e) {
-        /*
-        Player p = (Player) event.getPlayer();
-        if (event.getHand() == EquipmentSlot.HAND) {
-            Entity entity = event.getRightClicked();
+
+        Player p = e.getPlayer();
+        if (e.getHand() == EquipmentSlot.HAND) {
+            Entity entity = e.getRightClicked();
             String uuid = entity.getUniqueId().toString();
             if (uuid.equals("519e3c07-903e-2f02-b10e-bc4453f6f637")) {
-                p.openInventory(p.getEnderChest());
+                Inventory inv = Bukkit.createInventory(null, 9, "§6§lBank");
 
-         */
-        Player p = e.getPlayer();
-        Inventory inv = Bukkit.createInventory(null, 9, "§6§lBank");
+                ItemStack withdraw = new ItemStack(Material.CHEST_MINECART);
+                ItemMeta meta = withdraw.getItemMeta();
+                meta.setDisplayName("§6§lWithdraw Coins");
+                withdraw.setItemMeta(meta);
 
-        ItemStack withdraw = new ItemStack(Material.CHEST_MINECART);
-        ItemMeta meta = withdraw.getItemMeta();
-        meta.setDisplayName("§6§lWithdraw Coins");
-        withdraw.setItemMeta(meta);
+                ItemStack deposit = new ItemStack(Material.HOPPER_MINECART);
+                ItemMeta meta1 = deposit.getItemMeta();
+                meta1.setDisplayName("§7§lDeposit Coins");
+                deposit.setItemMeta(meta1);
+                ItemStack voids = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
+                ItemMeta meta5 = voids.getItemMeta();
+                meta5.setDisplayName("");
+                int num1 = bank.get(p.getUniqueId().toString());
+                ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
+                ItemMeta meta7 = balance.getItemMeta();
+                meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num1);
+                balance.setItemMeta(meta7);
+                inv.setItem(0, voids);
+                inv.setItem(1, voids);
+                inv.setItem(2, withdraw);
+                inv.setItem(3, voids);
+                inv.setItem(4, balance);
+                inv.setItem(5, voids);
+                inv.setItem(6, deposit);
+                inv.setItem(7, voids);
+                inv.setItem(8, voids);
 
-        ItemStack deposit = new ItemStack(Material.HOPPER_MINECART);
-        ItemMeta meta1 = deposit.getItemMeta();
-        meta1.setDisplayName("§7§lDeposit Coins");
-        deposit.setItemMeta(meta1);
-        ItemStack voids = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
-        ItemMeta meta5 = voids.getItemMeta();
-        meta5.setDisplayName("");
-        int num1 = bank.get(p.getUniqueId().toString());
-        ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
-        ItemMeta meta7 = balance.getItemMeta();
-        meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num1);
-        balance.setItemMeta(meta7);
-        inv.setItem(0, voids);
-        inv.setItem(1, voids);
-        inv.setItem(2, withdraw);
-        inv.setItem(3, voids);
-        inv.setItem(4, balance);
-        inv.setItem(5, voids);
-        inv.setItem(6, deposit);
-        inv.setItem(7, voids);
-        inv.setItem(8, voids);
-
-        p.openInventory(inv);
-
-
+                p.openInventory(inv);
+            }
+        }
     }
 }
