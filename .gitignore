@@ -3,3 +3,4 @@ out/artifacts/Loud_and_Snow_s_SMP_jar/SnowySMP.jar
 *.jar
 target/classes/config.yml
 src/main/resources/config.yml
+src/main/resources/config.yml
