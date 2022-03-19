@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a66c3e81-1ad4-4a0d-acfd-8fe6b52f1822" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
     </list>
     <list id="c29bbf91-0ad1-49b6-b116-581a10c72745" name="Changes by roshan" comment="" />
     <option name="SHOW_DIALOG" value="false" />
