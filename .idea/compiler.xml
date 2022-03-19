@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Snowy-RPG-Plugin" target="17" />
+      <module name="Snowy-RPG-Plugin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

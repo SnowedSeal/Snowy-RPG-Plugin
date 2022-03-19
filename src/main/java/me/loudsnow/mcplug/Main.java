@@ -1,5 +1,6 @@
 package me.loudsnow.mcplug;
 
+import lombok.Getter;
 import me.loudsnow.mcplug.cancelevents.*;
 import me.loudsnow.mcplug.desolation.DesolationAbilityListener;
 import me.loudsnow.mcplug.desolation.DesolationCommand;
@@ -23,10 +24,14 @@ import me.loudsnow.mcplug.truedeso.trueDesoCommand;
 import me.loudsnow.mcplug.truedeso.trueDesoListener;
 import me.loudsnow.mcplug.windstep.WindstepCommand;
 import me.loudsnow.mcplug.windstep.WindstepListener;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.World;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.utils.cache.CacheFlag;
+import org.bukkit.*;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Horse;
@@ -38,6 +43,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import javax.print.attribute.standard.Compression;
+import javax.security.auth.login.LoginException;
+import java.awt.Color;
 import java.io.*;
 import java.util.*;
 
@@ -65,14 +73,39 @@ public class Main extends JavaPlugin {
     public static Map<String, String> player = new HashMap<String, String>();
     public static Map<String, String> horseowner = new HashMap<String, String>();
     public static Map<String, Integer> horseint = new HashMap<String, Integer>();
-
-
+    @Getter
+    static JDA jda;
+    private TextChannel textChannel;
     @Override
     public void onEnable() {
+        saveDefaultConfig();
+        String botToken = getConfig().getString("discord-token");
+        try {
+            jda = JDABuilder.createDefault(botToken)
+                    .addEventListeners(new DiscordMessage())
+                    .setActivity(Activity.listening("all the people on the server!"))
+                    .build();
+            jda.awaitReady();
+        } catch (LoginException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (jda == null){
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+        TextChannel channel = jda.getGuildById("945036462141890601").getTextChannelById("946929911095001118");
+        channel.sendMessage("**Connected to Websocket**").queue();
+        EmbedBuilder eb = new EmbedBuilder();
+        eb.setColor(new Color(0x00FF00));
+        eb.setTitle(":white_check_mark:   **Server has started!**   :white_check_mark:");
+        eb.setFooter("Snowy RPG Bot written in Java by Loudbook");
+        channel.sendMessageEmbeds(eb.build()).queue();
+
         instance = this;
         getServer().getPluginManager().registerEvents(new CancelPortal(), this);
         getServer().getPluginManager().registerEvents(new DeathEvent(), this);
-        getServer().getPluginManager().registerEvents(new PigKillTest(), this);
         getServer().getPluginManager().registerEvents(new JoinEvent(), this);
         // getServer().getPluginManager().registerEvents(new ArmorStandCancel(), this);
         getServer().getPluginManager().registerEvents(new CancelBreakEvent(), this);
@@ -128,6 +161,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BankerListener(), this);
         getServer().getPluginManager().registerEvents(new BankerWithdraw(), this);
         getServer().getPluginManager().registerEvents(new BankerDeposit(), this);
+        getServer().getPluginManager().registerEvents(new ChatMessage(), this);
         Properties properties = new Properties();
         try {
             properties.load(new FileInputStream("data.properties"));
@@ -204,18 +238,28 @@ public class Main extends JavaPlugin {
         ConsoleCommandSender console = getServer().getConsoleSender();
         console.sendMessage("================================");
         console.sendMessage("Snowy RPG Plugin Enabled");
-        console.sendMessage("Version 1.2");
+        console.sendMessage("Version 2.0");
+        console.sendMessage("Latest Major Update: Bank");
         console.sendMessage("================================");
     }
 
     @Override
     public void onDisable() {
+
+        TextChannel channel = jda.getGuildById("945036462141890601").getTextChannelById("946929911095001118");
+        EmbedBuilder eb = new EmbedBuilder();
+        eb.setColor(new Color(0xFF0000));
+        eb.setTitle(":x:   **Server has shut down!**   :x:");
+        eb.setFooter("Snowy RPG Bot written in Java by Loudbook");
+        channel.sendMessageEmbeds(eb.build()).queue();
         Properties properties = new Properties();
         Properties properties1 = new Properties();
         Properties properties2 = new Properties();
         ConsoleCommandSender console = getServer().getConsoleSender();
         console.sendMessage("Saving Hashmap");
-
+        if (jda != null){
+            jda.shutdown();
+        }
 
         for (Map.Entry<String, String> entry : player.entrySet()) {
             properties.put(entry.getKey(), entry.getValue());
@@ -250,10 +294,6 @@ public class Main extends JavaPlugin {
         }
     }
 }
-
-
-
-
 
 
 

@@ -22,6 +22,7 @@ me\loudsnow\mcplug\forestsword\ForestSwordCommand.class
 me\loudsnow\mcplug\meteorslam\MeteorSlamListener$2.class
 me\loudsnow\mcplug\cancelevents\CancelPVP.class
 me\loudsnow\mcplug\flameblade\FlamebladeListener$2.class
+me\loudsnow\mcplug\ChatMessage.class
 me\loudsnow\mcplug\cancelevents\CancelUnload.class
 me\loudsnow\mcplug\glowingpendant\GlowingPendantCommand.class
 me\loudsnow\mcplug\npcs\NPC6.class
@@ -32,8 +33,10 @@ me\loudsnow\mcplug\shadowleap\ShadowleapListener.class
 me\loudsnow\mcplug\desolation\DesolationCommand.class
 me\loudsnow\mcplug\TrainingDummy.class
 me\loudsnow\mcplug\cancelevents\CancelBerryHarvest.class
+me\loudsnow\mcplug\Discord.class
 me\loudsnow\mcplug\npcs\BankerDeposit.class
 me\loudsnow\mcplug\windstep\WindstepCommand.class
+me\loudsnow\mcplug\ReadyListener.class
 me\loudsnow\mcplug\TrainingDummy$1.class
 me\loudsnow\mcplug\npcs\NPC5.class
 me\loudsnow\mcplug\flameblade\FlamebladeListener$1.class
@@ -47,6 +50,7 @@ me\loudsnow\mcplug\salvation\SalvationListener.class
 me\loudsnow\mcplug\npcs\NPC2.class
 me\loudsnow\mcplug\flameblade\FlamebladeCommand.class
 me\loudsnow\mcplug\meteorslam\MeteorSlamListener.class
+me\loudsnow\mcplug\DiscordMessage.class
 me\loudsnow\mcplug\npcs\NPC8.class
 me\loudsnow\mcplug\QuitEvent.class
 me\loudsnow\mcplug\cancelevents\CancelSaddle.class
@@ -54,6 +58,7 @@ me\loudsnow\mcplug\BankerSetup.class
 me\loudsnow\mcplug\shadowleap\ShadowleapListener$1.class
 me\loudsnow\mcplug\rookieglider\RookieGliderListener.class
 me\loudsnow\mcplug\DeathEvent.class
+me\loudsnow\mcplug\npcs\NPC2$1.class
 me\loudsnow\mcplug\startersword\starterswordCommand.class
 me\loudsnow\mcplug\desolation\DesolationAttackListener.class
 me\loudsnow\mcplug\windstep\WindstepListener.class

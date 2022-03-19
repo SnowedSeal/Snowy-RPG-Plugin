@@ -31,7 +31,7 @@ public class FlamebladeListener implements Listener {
                     } else {
                         new BukkitRunnable() {
                             private int counter = 10;
-                            static float radius = 1f;
+                            float radius = 1f;
 
                             @Override
                             public void run() {

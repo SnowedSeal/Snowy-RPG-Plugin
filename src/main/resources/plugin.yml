@@ -2,6 +2,7 @@ name: SnowyRPGPlugin
 version: 2.0
 author: LoudbookAndSnowedSeal
 main: me.loudsnow.mcplug.Main
+description: Snowy RPG Plugin
 api-version: 1.18
 commands:
   booktest:

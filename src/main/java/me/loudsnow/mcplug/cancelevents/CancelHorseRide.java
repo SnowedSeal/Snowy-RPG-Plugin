@@ -1,6 +1,5 @@
 package me.loudsnow.mcplug.cancelevents;
 
-import com.mongodb.internal.operation.ChangeStreamOperation;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
