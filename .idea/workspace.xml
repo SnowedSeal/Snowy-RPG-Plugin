@@ -10,7 +10,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a66c3e81-1ad4-4a0d-acfd-8fe6b52f1822" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/HealthBar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/Lvl1Mob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/cancelevents/ClearHash.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/ChatMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/SlashCommandInteraction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/report/ReportCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/report/ReportTabComplete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__club_minnced_opus_java_1_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__club_minnced_opus_java_api_1_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__club_minnced_opus_java_natives_1_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_neovisionaries_nv_websocket_client_2_14.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_13_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_17_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_dv8tion_JDA_5_0_0_alpha_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_4_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_trove4j_trove4j_3_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_16_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_2_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_2_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/ChatMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/DeathEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/DeathEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/Discord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/DiscordMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/DiscordMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/JoinEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/JoinEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/QuitEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/QuitEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/ReadyListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/flameblade/FlamebladeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/flameblade/FlamebladeListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SnowyRPG-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SnowyRPG-2.0-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/SnowyRPG-2.0-shaded.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SnowyRPG-2.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/SnowyRPG-2.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/ChatMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/DeathEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Discord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/DiscordMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/JoinEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/QuitEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/ReadyListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeListener$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeListener$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-SnowyRPG-2.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-SnowyRPG-2.0.jar" afterDir="false" />
     </list>
     <list id="c29bbf91-0ad1-49b6-b116-581a10c72745" name="Changes by roshan" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +119,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -70,11 +128,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mongo-java-driver-2.13.1.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../JavaDocs/JDA-5.0.0-alpha.9-javadoc.jar" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -95,7 +153,7 @@
       <module name="Snowy-RPG-Plugin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="me.loudsnow.mcplug.*" />
+          <option name="PATTERN" value="me.loudsnow.mcplug.discord.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,7 +166,7 @@
       <module name="Snowy-RPG-Plugin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="me.loudsnow.mcplug.*" />
+          <option name="PATTERN" value="me.loudsnow.mcplug.discord.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -121,7 +179,7 @@
       <module name="Snowy-RPG-Plugin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="me.loudsnow.mcplug.*" />
+          <option name="PATTERN" value="me.loudsnow.mcplug.discord.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

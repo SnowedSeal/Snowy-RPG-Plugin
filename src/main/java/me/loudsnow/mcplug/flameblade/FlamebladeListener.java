@@ -43,7 +43,10 @@ public class FlamebladeListener implements Listener {
                                 radius = radius + 0.3F;
 
                                 for (int i = 0; i < particles; i++) {
-
+                                    if (radius > 3.5f) {
+                                        radius = 0.3f;
+                                        this.cancel();
+                                    }
 
                                     double angle, x, z;
                                     angle = 2 * Math.PI * i / particles;
@@ -58,10 +61,6 @@ public class FlamebladeListener implements Listener {
                                     location1.subtract(x, 0, z);
                                     location2.subtract(x, -0.66, z);
                                     location3.subtract(x, -1.33, z);
-                                    if (radius > 3.5f) {
-                                        radius = 0.3f;
-                                        this.cancel();
-                                    }
                                 }
 
                                 this.counter--;

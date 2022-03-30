@@ -1,2 +1,3 @@
 
 src/main/resources/config.yml
+src/main/java/me/loudsnow/mcplug/BotRestart.java

@@ -5,6 +5,7 @@ import me.loudsnow.mcplug.cancelevents.*;
 import me.loudsnow.mcplug.desolation.DesolationAbilityListener;
 import me.loudsnow.mcplug.desolation.DesolationCommand;
 import me.loudsnow.mcplug.desolation.DesolationAttackListener;
+import me.loudsnow.mcplug.discord.*;
 import me.loudsnow.mcplug.flameblade.FlamebladeCommand;
 import me.loudsnow.mcplug.flameblade.FlamebladeListener;
 import me.loudsnow.mcplug.forestsword.ForestSwordCommand;
@@ -12,6 +13,8 @@ import me.loudsnow.mcplug.glowingpendant.GlowingPendantCommand;
 import me.loudsnow.mcplug.meteorslam.MeteorSlamCommand;
 import me.loudsnow.mcplug.meteorslam.MeteorSlamListener;
 import me.loudsnow.mcplug.npcs.*;
+import me.loudsnow.mcplug.report.ReportCommand;
+import me.loudsnow.mcplug.report.ReportTabComplete;
 import me.loudsnow.mcplug.rookieglider.RookieGliderCommand;
 import me.loudsnow.mcplug.rookieglider.RookieGliderListener;
 import me.loudsnow.mcplug.salvation.SalvationCommand;
@@ -30,24 +33,24 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.TextChannel;
-import net.dv8tion.jda.api.utils.cache.CacheFlag;
-import org.bukkit.*;
+import net.dv8tion.jda.api.interactions.commands.build.Commands;
+import net.dv8tion.jda.api.interactions.commands.build.OptionData;
+import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Horse;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
-import org.bukkit.event.world.ChunkUnloadEvent;
-import org.bukkit.inventory.HorseInventory;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import javax.print.attribute.standard.Compression;
 import javax.security.auth.login.LoginException;
 import java.awt.Color;
 import java.io.*;
 import java.util.*;
+
+import static net.dv8tion.jda.api.interactions.commands.OptionType.USER;
 
 
 public class Main extends JavaPlugin {
@@ -65,6 +68,7 @@ public class Main extends JavaPlugin {
     public static HashMap<String, Integer> cd6 = new HashMap<>();
     public static HashMap<String, Integer> cd7 = new HashMap<>();
     public static HashMap<String, Integer> cd8 = new HashMap<>();
+    public static HashMap<String, Integer> cd9 = new HashMap<>();
     public static HashMap<String, Integer> horse = new HashMap<>();
     public static HashMap<String, Integer> horsealive = new HashMap<>();
     public static HashMap<String, Integer> player2 = new HashMap<>();
@@ -73,16 +77,25 @@ public class Main extends JavaPlugin {
     public static Map<String, String> player = new HashMap<String, String>();
     public static Map<String, String> horseowner = new HashMap<String, String>();
     public static Map<String, Integer> horseint = new HashMap<String, Integer>();
+    public static HashMap<String, Boolean> bugBoolean = new HashMap<>();
+    public static HashMap<String, Boolean> abuseBoolean = new HashMap<>();
+    public static HashMap<String, Boolean> errorBoolean = new HashMap<>();
+    public static HashMap<String, Boolean> deathBoolean = new HashMap<>();
+
+
+
     @Getter
-    static JDA jda;
+    public static JDA jda;
     private TextChannel textChannel;
     @Override
     public void onEnable() {
-        saveDefaultConfig();
+        this.reloadConfig();
+        ConsoleCommandSender console = getServer().getConsoleSender();
         String botToken = getConfig().getString("discord-token");
         try {
             jda = JDABuilder.createDefault(botToken)
                     .addEventListeners(new DiscordMessage())
+                    .addEventListeners(new SlashCommandInteraction())
                     .setActivity(Activity.listening("all the people on the server!"))
                     .build();
             jda.awaitReady();
@@ -92,16 +105,28 @@ public class Main extends JavaPlugin {
             e.printStackTrace();
         }
         if (jda == null){
-            getServer().getPluginManager().disablePlugin(this);
-            return;
+            console.sendMessage("Unable to connect to Discord!");
         }
+        Guild guild = jda.getGuildById("945036462141890601");
+        CommandListUpdateAction commands = guild.updateCommands();
+        commands.addCommands(
+                Commands.slash("help", "Gives info on how to join the server!")
+                        .addOptions(new OptionData(USER, "user", "The user to ping in the process")));
+        commands.queue();
         TextChannel channel = jda.getGuildById("945036462141890601").getTextChannelById("946929911095001118");
         channel.sendMessage("**Connected to Websocket**").queue();
         EmbedBuilder eb = new EmbedBuilder();
         eb.setColor(new Color(0x00FF00));
         eb.setTitle(":white_check_mark:   **Server has started!**   :white_check_mark:");
         eb.setFooter("Snowy RPG Bot written in Java by Loudbook");
+        guild.updateCommands();
         channel.sendMessageEmbeds(eb.build()).queue();
+
+
+
+
+
+
 
         instance = this;
         getServer().getPluginManager().registerEvents(new CancelPortal(), this);
@@ -118,6 +143,8 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new TraderSpawn(), this);
         getServer().getPluginManager().registerEvents(new NPC6(), this);
         this.getCommand("getwindstep").setExecutor(new WindstepCommand());
+        this.getCommand("clearhash").setExecutor(new ClearHash());
+
         getServer().getPluginManager().registerEvents(new WindstepListener(), this);
         getServer().getPluginManager().registerEvents(new CancelItemPickup(), this); // <- this
         getServer().getPluginManager().registerEvents(new CancelFallDamage(), this);
@@ -139,6 +166,8 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CancelHorseRide(), this);
         getServer().getPluginManager().registerEvents(new RookieGliderListener(), this);
         this.getCommand("getflameblade").setExecutor(new FlamebladeCommand());
+        this.getCommand("report").setExecutor(new ReportCommand());
+        this.getCommand("report").setTabCompleter(new ReportTabComplete());
         getServer().getPluginManager().registerEvents(new FlamebladeListener(), this);
         getServer().getPluginManager().registerEvents(new SalvationListener(), this);
         getServer().getPluginManager().registerEvents(new SalvationListener(), this);
@@ -149,6 +178,7 @@ public class Main extends JavaPlugin {
         this.getCommand("getglowingpendant").setExecutor(new GlowingPendantCommand());
         this.getCommand("hashmaptest").setExecutor(new TestHashCommand());
         this.getCommand("whistle").setExecutor(new Whistle());
+        this.getCommand("testspawn").setExecutor(new Lvl1Mob());
         getServer().getPluginManager().registerEvents(new HorseDeath(), this);
         getServer().getPluginManager().registerEvents(new QuitEvent(), this);
         //getServer().getPluginManager().registerEvents(new JoinEvent(), this);
@@ -162,6 +192,8 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BankerWithdraw(), this);
         getServer().getPluginManager().registerEvents(new BankerDeposit(), this);
         getServer().getPluginManager().registerEvents(new ChatMessage(), this);
+        getServer().getPluginManager().registerEvents(new HealthBar(), this);
+
         Properties properties = new Properties();
         try {
             properties.load(new FileInputStream("data.properties"));
@@ -194,54 +226,46 @@ public class Main extends JavaPlugin {
             horseowner.put(key, properties1.get(key).toString());
         }
 
-
-/*
+        console.sendMessage("================================");
+        console.sendMessage("Snowy RPG Plugin Enabled");
+        console.sendMessage("Version 2.4");
+        console.sendMessage("Latest Major Update: Spawning Algorithm");
+        console.sendMessage("================================");
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable(){
             public void run(){
+                Location EntityArea = new Location(Bukkit.getWorld("world"),328, 111, 196);
+                World world = Bukkit.getServer().getWorld("world");
+                List<Entity> nearbyEntities = (List<Entity>) EntityArea.getWorld().getNearbyEntities(EntityArea, 60, 15, 60);
 
-                for (Player p : Bukkit.getOnlinePlayers()){
-                    ItemStack power = new ItemStack(Material.BLAZE_POWDER);
-                    ItemMeta meta = power.getItemMeta();
-                    meta.setDisplayName("" + ChatColor.BLUE + ChatColor.BOLD + "Glowing Pendant");
-                    power.setItemMeta(meta);
-
-                    if (p.getInventory().containsAtLeast(power, 1))  {
-                        p.sendMessage("You have the item!");
-                    }
-                }
-            }
-        }, 20L, 10L);
-        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable(){
-            public void run(){
-                for(World w : Bukkit.getWorlds()) {
-                    for (Entity entity : w.getEntities()) {
-                        if (entity instanceof Horse) {
-                            if (((Horse) entity).getOwner() != null) {
-                                Player owner = (Player) ((Horse) entity).getOwner();
-                                ((Horse) entity).setTarget(owner);
+                for(Entity e : world.getEntities()){
+                    if (nearbyEntities.contains(e)){
+                        if (e instanceof Player) {
+                            if (e.isInWater()) {
+                                ((Player) e).damage(1.5);
+                                ((Player) e).sendTitle("" + ChatColor.BOLD + ChatColor.RED + "DANGER: POISON", "");
                             }
                         }
                     }
                 }
+            }
+        },20, 20);
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
+            @Override
+            public void run() {
+                World world = Bukkit.getServer().getWorld("world");
+                List<Player> players = world.getPlayers();
+
+                for (Player p : players){
+                    if(p.getLocation().getY() >= 175){
+                        p.sendTitle("" + ChatColor.BOLD + ChatColor.RED + "Low Oxygen", "");
+                        p.damage(2);
+                    }
+                }
 
             }
-        }, 0L, 5L);
-        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable(){
-            public void run(){
-
-            }
-        }, 0L, 5L);
-*/
-
-        // HashMaps.bank = loadHashMap("bank");
-
-        ConsoleCommandSender console = getServer().getConsoleSender();
-        console.sendMessage("================================");
-        console.sendMessage("Snowy RPG Plugin Enabled");
-        console.sendMessage("Version 2.0");
-        console.sendMessage("Latest Major Update: Bank");
-        console.sendMessage("================================");
+        }, 20, 20);
     }
+
 
     @Override
     public void onDisable() {

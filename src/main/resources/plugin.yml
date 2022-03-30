@@ -1,5 +1,5 @@
 name: SnowyRPGPlugin
-version: 2.0
+version: 2.4
 author: LoudbookAndSnowedSeal
 main: me.loudsnow.mcplug.Main
 description: Snowy RPG Plugin
@@ -53,3 +53,15 @@ commands:
   whistle:
     description: Summon Horse
     usage: /whistle
+  reloadbot:
+    description: Reload Discord Bot
+    usage: /reloadbot
+  report:
+    description: Report Something
+    usage: /report
+  clearhash:
+    description: Clear Hash
+    usage: /clearhash
+  testspawn:
+    description: Test Spawning Algorithm
+    usage: /testspawn
