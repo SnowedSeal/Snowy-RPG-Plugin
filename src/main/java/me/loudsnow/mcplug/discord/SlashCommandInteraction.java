@@ -1,6 +1,5 @@
 package me.loudsnow.mcplug.discord;
 
-import com.sun.tools.javac.main.OptionHelper;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;

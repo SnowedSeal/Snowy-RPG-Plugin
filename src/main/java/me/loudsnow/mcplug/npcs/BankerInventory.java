@@ -4,6 +4,7 @@ package me.loudsnow.mcplug.npcs;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,27 +14,37 @@ import org.bukkit.event.inventory.InventoryMoveItemEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
+
+import java.util.ArrayList;
 
 import static me.loudsnow.mcplug.Main.bank;
+import static me.loudsnow.mcplug.Main.instance;
 
 
 public class BankerInventory implements Listener{
     @EventHandler
     public void onPlayerClickInventory(InventoryClickEvent e) {
         if(e.getView().getTitle().equalsIgnoreCase("§6§lBank")) {
+            Player p = (Player) e.getWhoClicked();
             e.setCancelled(true);
-
+            NamespacedKey namespacedKey = new NamespacedKey(instance, "balance");
+            PersistentDataContainer pbalance = p.getPersistentDataContainer();
+            int num = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
             if (e.getCurrentItem().getItemMeta() != null){
+                ItemStack back = new ItemStack(Material.ARROW);
+                ItemMeta backmeta = back.getItemMeta();
+                backmeta.setDisplayName("§cBack");
+                back.setItemMeta(backmeta);
                 if (e.getCurrentItem().getItemMeta().getDisplayName() != null) {
                     if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§6§lWithdraw Coins")) {
-                        Player p = (Player) e.getWhoClicked();
 
                         ItemStack voids = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
                         ItemMeta meta5 = voids.getItemMeta();
                         meta5.setDisplayName(" ");
                         voids.setItemMeta(meta5);
                         String playerKey = p.getUniqueId().toString();
-                        int num = bank.get(playerKey);
                         Inventory inv = Bukkit.createInventory(null, 9, "§6§lBank");
 
                         ItemStack with1 = new ItemStack(Material.CHEST_MINECART);
@@ -54,13 +65,17 @@ public class BankerInventory implements Listener{
                         ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
                         ItemMeta meta7 = balance.getItemMeta();
                         meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
+                        ArrayList<String> lore = new ArrayList();
+                        lore.add(" ");
+                        lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "me to choose a specific amount to withdraw!");
+                        meta7.setLore(lore);
                         balance.setItemMeta(meta7);
 
                         ItemStack with4 = new ItemStack(Material.CHEST_MINECART);
                         ItemMeta meta4 = with4.getItemMeta();
                         meta4.setDisplayName(""  + ChatColor.GRAY + ChatColor.BOLD + "Withdraw 64 Coins");
                         with4.setItemMeta(meta4);
-                        inv.setItem(0, voids);
+                        inv.setItem(0, back);
                         inv.setItem(1, with1);
                         inv.setItem(2, voids);
                         inv.setItem(3, with2);
@@ -82,13 +97,13 @@ public class BankerInventory implements Listener{
                         */
 
                     } else if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§7§lDeposit Coins")) {
-                        Player p = (Player) e.getWhoClicked();
+
+
                         ItemStack voids = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
                         ItemMeta meta5 = voids.getItemMeta();
                         meta5.setDisplayName(" ");
                         voids.setItemMeta(meta5);
                         String playerKey = p.getUniqueId().toString();
-                        int num = bank.get(playerKey);
                         Inventory inv = Bukkit.createInventory(null, 9, "§6§lBank");
 
                         ItemStack with1 = new ItemStack(Material.HOPPER_MINECART);
@@ -116,7 +131,7 @@ public class BankerInventory implements Listener{
                         meta4.setDisplayName("§7§lDeposit 64 Coins");
                         with4.setItemMeta(meta4);
 
-                        inv.setItem(0, voids);
+                        inv.setItem(0, back);
                         inv.setItem(1, with1);
                         inv.setItem(2, voids);
                         inv.setItem(3, with2);

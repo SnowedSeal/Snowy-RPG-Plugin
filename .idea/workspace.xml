@@ -10,64 +10,174 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a66c3e81-1ad4-4a0d-acfd-8fe6b52f1822" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/HealthBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/Lvl1Mob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/cancelevents/ClearHash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/ChatMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/SlashCommandInteraction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/report/ReportCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/report/ReportTabComplete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__club_minnced_opus_java_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__club_minnced_opus_java_api_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__club_minnced_opus_java_natives_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_neovisionaries_nv_websocket_client_2_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_13_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_17_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_dv8tion_JDA_5_0_0_alpha_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_4_4_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_trove4j_trove4j_3_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_16_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_22.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_comphenix_packetwrapper_PacketWrapper_1_13_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_comphenix_protocol_ProtocolLib_4_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_authlib_1_5_21.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_papermc_paper_paper_api_1_18_2_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__it_unimi_dsi_fastutil_8_5_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_api_4_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_key_4_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_text_minimessage_4_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_text_serializer_gson_4_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_text_serializer_legacy_4_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_text_serializer_plain_4_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_examination_api_1_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_examination_string_1_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_16_R0_4_deprecated_build_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_17_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_0_beta9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_analysis_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_commons_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_tree_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/PacketWrapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/craftbukkit_1_18_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/waterfall_1_18_483.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/EasyMetadataPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/PlayerJoin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/SpawnQueen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/cancelevents/CancelFire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/cancelevents/CancelSandFall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/cancelevents/CancelTransform.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/cancelevents/EntityDeath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/mobdeaths/lvl1death.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/packets/Boom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/packets/PacketTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/snowblade/SnowBladeListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/snowblade/SnowbladeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Snowy-RPG-Plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Snowy-RPG-Plugin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_dv8tion_JDA_5_0_0_alpha_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_dv8tion_JDA_5_0_0_alpha_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_16_R0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_12_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_21_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_8_0_beta4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_2_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_2_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/ChatMessage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/DeathEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/DeathEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/Discord.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/DiscordMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/DiscordMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/JoinEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/JoinEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/HealthBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/HealthBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/Lvl1Mob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/Lvl1Mob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/QuitEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/QuitEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/ReadyListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/flameblade/FlamebladeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/flameblade/FlamebladeListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/TrainingDummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/TrainingDummy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/cancelevents/CancelBreakEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/cancelevents/CancelBreakEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/cancelevents/CancelItemPickup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/cancelevents/CancelItemPickup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/ChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/ChatMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/SlashCommandInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/discord/SlashCommandInteraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/meteorslam/MeteorSlamListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/meteorslam/MeteorSlamListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/npcs/BankerDeposit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/npcs/BankerDeposit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/npcs/BankerInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/npcs/BankerInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/npcs/BankerWithdraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/npcs/BankerWithdraw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/npcs/NPC2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/npcs/NPC2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/report/ReportCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/report/ReportCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SnowyRPG-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SnowyRPG-2.0-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/SnowyRPG-2.0-shaded.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SnowyRPG-2.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/SnowyRPG-2.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SnowyRPG-2.0-shaded.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SnowyRPG-2.0.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/ChatMessage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/DeathEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Discord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/DiscordMessage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/JoinEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/BankerSetup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/BankerSetup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/HealthBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/HealthBar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/HorseDeath.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/HorseDeath.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Lvl1Mob$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Lvl1Mob$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Lvl1Mob$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Lvl1Mob$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Lvl1Mob$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Lvl1Mob$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Lvl1Mob$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Lvl1Mob$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Lvl1Mob.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Lvl1Mob.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Main$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/QuitEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/ReadyListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/PigKillTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/PigKillTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/TestHashCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/TestHashCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/TraderSpawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/TraderSpawn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/TrainingDummy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/TrainingDummy$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/TrainingDummy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/TrainingDummy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Whistle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Whistle$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Whistle$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Whistle$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Whistle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/Whistle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelBedEnter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelBedEnter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelBerryHarvest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelBerryHarvest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelBreakEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelBreakEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelFallDamage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelFallDamage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelHorseDamage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelHorseDamage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelHorseRide.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelHorseRide.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelItemFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelItemFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelItemPickup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelItemPickup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelPVP.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelPVP.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelPlaceEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelPlaceEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelPortal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelPortal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelSaddle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelSaddle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelTnt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelTnt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelUnload$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelUnload$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelUnload.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/CancelUnload.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/ClearHash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/cancelevents/ClearHash.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationAbilityListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationAbilityListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationAbilityListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationAbilityListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationAttackListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationAttackListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationAttackListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationAttackListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/desolation/DesolationCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/discord/ChatMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/discord/ChatMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/discord/DeathEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/discord/DeathEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/discord/DiscordMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/discord/DiscordMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/discord/JoinEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/discord/JoinEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/discord/QuitEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/discord/QuitEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/discord/SlashCommandInteraction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/discord/SlashCommandInteraction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeListener$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeListener$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeListener$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/flameblade/FlamebladeListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/forestsword/ForestSwordCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/forestsword/ForestSwordCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/glowingpendant/GlowingPendantCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/glowingpendant/GlowingPendantCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/hashmap/HashMaps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/hashmap/HashMaps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/meteorslam/MeteorSlamCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/meteorslam/MeteorSlamCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/meteorslam/MeteorSlamListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/meteorslam/MeteorSlamListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/meteorslam/MeteorSlamListener$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/meteorslam/MeteorSlamListener$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/meteorslam/MeteorSlamListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/meteorslam/MeteorSlamListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/BankerDeposit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/BankerDeposit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/BankerInventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/BankerInventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/BankerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/BankerListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/BankerWithdraw.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/BankerWithdraw.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/HorseListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/HorseListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/HorseListener$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/HorseListener$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/HorseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/HorseListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/npcs/NPC8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/report/ReportCommand$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/report/ReportCommand$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/report/ReportCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/report/ReportCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/report/ReportTabComplete.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/report/ReportTabComplete.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/rookieglider/RookieGliderCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/rookieglider/RookieGliderCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/rookieglider/RookieGliderListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/rookieglider/RookieGliderListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/rookieglider/RookieGliderListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/rookieglider/RookieGliderListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/salvation/SalvationCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/salvation/SalvationCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/salvation/SalvationListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/salvation/SalvationListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/shadowleap/ShadowleapCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/shadowleap/ShadowleapCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/shadowleap/ShadowleapListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/shadowleap/ShadowleapListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/shadowleap/ShadowleapListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/shadowleap/ShadowleapListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/starterdagger/starterdaggerCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/starterdagger/starterdaggerCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/startersword/starterswordCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/startersword/starterswordCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/truedeso/trueDesoCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/truedeso/trueDesoCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/truedeso/trueDesoListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/truedeso/trueDesoListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/windstep/WindstepCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/windstep/WindstepCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/windstep/WindstepListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/windstep/WindstepListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/windstep/WindstepListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/loudsnow/mcplug/windstep/WindstepListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-SnowyRPG-2.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-SnowyRPG-2.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-SnowyRPG-2.0.jar" beforeDir="false" />
     </list>
     <list id="c29bbf91-0ad1-49b6-b116-581a10c72745" name="Changes by roshan" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,10 +238,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../JavaDocs/JDA-5.0.0-alpha.9-javadoc.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Dependancies/waterfall-1.18-483.jar" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.2137931" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -228,6 +338,12 @@
       <updated>1645756554714</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
+    <option featureType="dependencySupport" implementationName="java:net.kyori:adventure-api" />
+    <option featureType="dependencySupport" implementationName="java:org.spigotmc:spigot-api" />
+    <option featureType="dependencySupport" implementationName="java:io.papermc.paper:paper-api" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

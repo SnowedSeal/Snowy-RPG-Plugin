@@ -1,14 +1,20 @@
 package me.loudsnow.mcplug.cancelevents;
 
+import me.loudsnow.mcplug.Main;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.plugin.Plugin;
+
+import static me.loudsnow.mcplug.Main.instance;
 
 public class CancelBreakEvent implements Listener {
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event){
         Player player = event.getPlayer();
+
+
         if (player.getDisplayName().equals("RGolden")) {
         }
         else if (player.getDisplayName().equals("Loudbook")) {

@@ -55,10 +55,10 @@ public class MeteorSlamListener implements Listener {
                                         if (tmp instanceof Damageable)
                                             if (tmp instanceof Player || tmp instanceof Horse) {
                                                 if (tmp.getUniqueId().toString().equals("56ff4351-bebe-2627-86b0-181cc8d4ff1c")){
-                                                    ((Damageable) tmp).damage(25);
+                                                    ((Damageable) tmp).damage(75);
                                                 }
                                             } else {
-                                                ((Damageable) tmp).damage(25);
+                                                ((Damageable) tmp).damage(75);
                                                 }
                                     world.spawnParticle(Particle.EXPLOSION_LARGE, location, 10, 1, 1, 1, 1);
                                     hitground.put(p.getUniqueId().toString(), 1);

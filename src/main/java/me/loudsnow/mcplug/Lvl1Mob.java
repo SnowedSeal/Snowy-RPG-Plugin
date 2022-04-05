@@ -49,38 +49,59 @@ public class Lvl1Mob implements CommandExecutor {
             }
         }
         p.sendMessage(ChatColor.GREEN + "Starting Spawn...");
-        for (i = 0; i < 75; i++){
+        for (i = 0; i < 125; i++) {
             int xmax = 229;
             int xmin = 97;
             int zmax = 130;
             int zmin = -50;
-            int xrandom = (int)Math.floor(Math.random()*(xmax-xmin+1)+xmin);
-            int zrandom = (int)Math.floor(Math.random()*(zmax-zmin+1)+zmin);
+            int xrandom = (int) Math.floor(Math.random() * (xmax - xmin + 1) + xmin);
+            int zrandom = (int) Math.floor(Math.random() * (zmax - zmin + 1) + zmin);
 
-            if (xrandom < 108 && xrandom > 196 && zrandom < 1 && zrandom > 92) {
-                final double[] count = {7};
-                int finalXrandom = xrandom;
-                int finalZrandom = zrandom;
-                int locy = world.getHighestBlockAt(xrandom, zrandom).getY() + 1;
-                Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
-                    @Override
-                    public void run() {
+            while (xrandom > 108 && xrandom < 196 && zrandom > 1 && zrandom < 92){
+                xrandom = (int) Math.floor(Math.random() * (xmax - xmin + 1) + xmin);
+                zrandom = (int)Math.floor(Math.random()*(zmax-zmin+1)+zmin);
+            }
+
+            final double[] count = {7};
+            int finalXrandom1 = xrandom;
+            int finalZrandom1 = zrandom;
+            Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
+                @Override
+                public void run() {
+                    if (world.getHighestBlockAt(finalXrandom1, finalZrandom1).getBlockData().getMaterial().equals(Material.WATER) || world.getHighestBlockAt(finalXrandom1, finalZrandom1).getBlockData().getMaterial().equals(Material.AZALEA_LEAVES)|| world.getHighestBlockAt(finalXrandom1, finalZrandom1).getY() >= 115){
+                    } else {
                         count[0] = count[0] - 0.5;
-                        Location entityloc = new Location(world, finalXrandom, locy + count[0], finalZrandom);
-                        world.spawnParticle(Particle.SMOKE_LARGE, entityloc, 10, 0, 0, 0, 0.5);
-                    }
-                }, 5, 2);
-                int finalXrandom1 = xrandom;
-                int finalZrandom1 = zrandom;
-                Bukkit.getScheduler().runTaskLater(instance, new Runnable() {
-                    @Override
-                    public void run() {
-                        Location loc = new Location(world, finalXrandom1, locy, finalZrandom1);
+                        Location entityloc = new Location(world, finalXrandom1, world.getHighestBlockAt(finalXrandom1, finalZrandom1).getY() + count[0], finalZrandom1);
+                        world.spawnParticle(Particle.SMOKE_LARGE, entityloc, 10, 0, 0, 0, 0.1);
+                        }
+                }
+            }, 5, 2);
+
+
+            Bukkit.getScheduler().runTaskLater(instance, new Runnable() {
+                @Override
+                public void run() {
+                    int i = 0;
+                    int xrandom = (int)Math.floor(Math.random()*(xmax-xmin+1)+xmin);
+                    int zrandom = (int)Math.floor(Math.random()*(zmax-zmin+1)+zmin);
+                    int locy = world.getHighestBlockAt(finalXrandom1, finalZrandom1).getY() + 1;
+                    Location loc = new Location(world, finalXrandom1, locy, finalZrandom1);
+
+//                    while (locy >= 120 || spawnloc.getBlock().getBlockData().getMaterial().equals(Material.AIR)){
+//                        xrandom = (int)Math.floor(Math.random()*(xmax-xmin+1)+xmin);
+//                        zrandom = (int)Math.floor(Math.random()*(zmax-zmin+1)+zmin);
+//                        spawnloc = new Location(world, finalXrandom1, block, finalZrandom1);
+//                        loc = new Location(world, xrandom, locy, zrandom);
+//                        locy = world.getHighestBlockAt(xrandom, zrandom).getY() + 1;
+//                    }
+                    if (world.getHighestBlockAt(finalXrandom1, finalZrandom1).getBlockData().getMaterial().equals(Material.WATER) || world.getHighestBlockAt(finalXrandom1, finalZrandom1).getBlockData().getMaterial().equals(Material.AZALEA_LEAVES)){
+                    } else {
                         Zombie mob = (Zombie) world.spawnEntity(loc, EntityType.ZOMBIE);
                         PersistentDataContainer levels = mob.getPersistentDataContainer();
                         levels.set(namespacedKey, PersistentDataType.STRING, "1");
                         AttributeInstance health = mob.getAttribute(Attribute.GENERIC_MAX_HEALTH);
                         health.setBaseValue(40.0D);
+                        mob.setRemoveWhenFarAway(false);
                         mob.setHealth(40.0D);
                         AttributeInstance strength = mob.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE);
                         mob.setCustomNameVisible(true);
@@ -91,112 +112,10 @@ public class Lvl1Mob implements CommandExecutor {
                         mob.setPersistent(true);
                         mob.getEquipment().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
                         mob.getEquipment().setBoots(new ItemStack(Material.LEATHER_BOOTS));
-
-
-                        world.spawnParticle(Particle.SPELL_WITCH, mob.getLocation(), 50, 0, 0, 0, 0);
-                    }
-                }, 24);
-
-
-            }
-
-            while (xrandom < 108 && xrandom > 196){
-                xrandom = (int) Math.floor(Math.random() * (xmax - xmin + 1) + xmin);
-                if (xrandom > 108 && xrandom < 196 && zrandom > 1 && zrandom < 92) {
-                } else {
-                    if (world.getHighestBlockAt(xrandom, zrandom).getBlockData().getMaterial().equals(Material.WATER) || world.getHighestBlockAt(xrandom, zrandom).getBlockData().getMaterial().equals(Material.AZALEA_LEAVES)){
-                    } else {
-                        int locy = world.getHighestBlockAt(xrandom, zrandom).getY() + 1;
-                        final double[] count = {7};
-                        int finalXrandom = xrandom;
-                        int finalZrandom = zrandom;
-                        Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
-                            @Override
-                            public void run() {
-                                count[0] = count[0] - 0.5;
-                                Location entityloc = new Location(world, finalXrandom, locy + count[0], finalZrandom);
-                                world.spawnParticle(Particle.SMOKE_LARGE, entityloc, 10, 0, 0, 0, 0.5);
-                            }
-                        }, 5, 2);
-                        int finalXrandom1 = xrandom;
-                        int finalZrandom1 = zrandom;
-                        Bukkit.getScheduler().runTaskLater(instance, new Runnable() {
-                            @Override
-                            public void run() {
-                                Location loc = new Location(world, finalXrandom1, locy, finalZrandom1);
-                                Zombie mob = (Zombie) world.spawnEntity(loc, EntityType.ZOMBIE);
-                                PersistentDataContainer levels = mob.getPersistentDataContainer();
-                                levels.set(namespacedKey, PersistentDataType.STRING, "1");
-                                AttributeInstance health = mob.getAttribute(Attribute.GENERIC_MAX_HEALTH);
-                                health.setBaseValue(40.0D);
-                                mob.setHealth(40.0D);
-                                AttributeInstance strength = mob.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE);
-                                mob.setCustomNameVisible(true);
-                                strength.setBaseValue(10.0D);
-                                int healthrounded = (int) Math.round(mob.getHealth());
-                                int maxhealthrounded = (int) Math.round(mob.getMaxHealth());
-                                mob.setCustomName("" + ChatColor.RED + ChatColor.BOLD + healthrounded + "/" + maxhealthrounded);
-                                mob.setPersistent(true);
-                                mob.getEquipment().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
-                                mob.getEquipment().setBoots(new ItemStack(Material.LEATHER_BOOTS));
-                                float radius = 0.3f;
-                                Location location1 = mob.getEyeLocation();
-                                Location location2 = mob.getEyeLocation();
-                                Location location3 = mob.getEyeLocation();
-                                world.spawnParticle(Particle.SPELL_WITCH, mob.getLocation(), 50, 0, 0, 0, 0);
-                            }
-                        }, 24);
-
-
+                        world.spawnParticle(Particle.DRAGON_BREATH, mob.getLocation(), 50, 0, 0, 0, 0.05);
                     }
                 }
-            }
-            while (zrandom > 1 && zrandom < 92){
-                zrandom = (int)Math.floor(Math.random()*(zmax-zmin+1)+zmin);
-                if (xrandom > 108 && xrandom < 196 && zrandom > 1 && zrandom < 92) {
-                } else {
-                    if (world.getHighestBlockAt(xrandom, zrandom).getBlockData().getMaterial().equals(Material.WATER) || world.getHighestBlockAt(xrandom, zrandom).getBlockData().getMaterial().equals(Material.AZALEA_LEAVES)){
-                    } else {
-                        final double[] count = {7};
-                        int finalXrandom = xrandom;
-                        int finalZrandom = zrandom;
-                        int locy = world.getHighestBlockAt(xrandom, zrandom).getY() + 1;
-                        Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
-                            @Override
-                            public void run() {
-                                count[0] = count[0] - 0.5;
-                                Location entityloc = new Location(world, finalXrandom, locy + count[0], finalZrandom);
-                                world.spawnParticle(Particle.SMOKE_LARGE, entityloc, 10, 0, 0, 0, 0.5);
-                            }
-                        }, 5, 2);
-                        int finalXrandom1 = xrandom;
-                        int finalZrandom1 = zrandom;
-                        Bukkit.getScheduler().runTaskLater(instance, new Runnable() {
-                            @Override
-                            public void run() {
-                                Location loc = new Location(world, finalXrandom1, locy, finalZrandom1);
-                                Zombie mob = (Zombie) world.spawnEntity(loc, EntityType.ZOMBIE);
-                                PersistentDataContainer levels = mob.getPersistentDataContainer();
-                                levels.set(namespacedKey, PersistentDataType.STRING, "1");
-                                AttributeInstance health = mob.getAttribute(Attribute.GENERIC_MAX_HEALTH);
-                                health.setBaseValue(40.0D);
-                                mob.setHealth(40.0D);
-                                AttributeInstance strength = mob.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE);
-                                mob.setCustomNameVisible(true);
-                                strength.setBaseValue(10.0D);
-                                int healthrounded = (int) Math.round(mob.getHealth());
-                                int maxhealthrounded = (int) Math.round(mob.getMaxHealth());
-                                mob.setCustomName("" + ChatColor.RED + ChatColor.BOLD + healthrounded + "/" + maxhealthrounded);
-                                mob.setPersistent(true);
-                                mob.getEquipment().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
-                                mob.getEquipment().setBoots(new ItemStack(Material.LEATHER_BOOTS));
-                                world.spawnParticle(Particle.SPELL_WITCH, mob.getLocation(), 50, 0, 0, 0, 0);
-                            }
-                        }, 24);
-
-                    }
-                }
-            }
+            }, 27);
         }
         return true;
     }
