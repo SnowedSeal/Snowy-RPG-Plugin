@@ -60,7 +60,7 @@ public class Whistle implements CommandExecutor {
                                     p.sendMessage(ChatColor.GREEN + "Summoning Horse!");
                                     horsealive.put(p.getUniqueId().toString(), 0);
                                     cd7.put(p.getUniqueId().toString(), 0);
-                                    new Location(Bukkit.getWorld("spigot_1_18_1_1651099"), locX, locY, locZ).getChunk().unload();
+                                    new Location(Bukkit.getWorld("world"), locX, locY, locZ).getChunk().unload();
                                     Bukkit.getScheduler().runTaskLater(instance, new Runnable() {
                                         @Override
                                         public void run() {

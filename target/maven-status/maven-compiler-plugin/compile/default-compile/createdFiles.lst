@@ -20,7 +20,6 @@ me\loudsnow\mcplug\cancelevents\CancelTransform.class
 me\loudsnow\mcplug\cancelevents\CancelPVP.class
 me\loudsnow\mcplug\cancelevents\EntityDeath.class
 me\loudsnow\mcplug\CancelBreakEvent.class
-me\loudsnow\mcplug\EasyMetadataPacket.class
 me\loudsnow\mcplug\npcs\NPC6.class
 me\loudsnow\mcplug\cancelevents\CancelFire.class
 me\loudsnow\mcplug\HealthBar.class
@@ -30,7 +29,6 @@ me\loudsnow\mcplug\cancelevents\CancelBerryHarvest.class
 me\loudsnow\mcplug\windstep\WindstepCommand.class
 me\loudsnow\mcplug\packets\Boom.class
 me\loudsnow\mcplug\Main$4.class
-me\loudsnow\mcplug\TrainingDummy$1.class
 me\loudsnow\mcplug\discord\ChatMessage.class
 me\loudsnow\mcplug\Whistle.class
 me\loudsnow\mcplug\npcs\NPC2.class
@@ -73,6 +71,7 @@ me\loudsnow\mcplug\forestsword\ForestSwordCommand.class
 me\loudsnow\mcplug\meteorslam\MeteorSlamListener$2.class
 me\loudsnow\mcplug\flameblade\FlamebladeListener$2.class
 me\loudsnow\mcplug\cancelevents\CancelUnload.class
+me\loudsnow\mcplug\accessories\Menu.class
 me\loudsnow\mcplug\glowingpendant\GlowingPendantCommand.class
 me\loudsnow\mcplug\mobdeaths\lvl1death$1.class
 me\loudsnow\mcplug\cancelevents\CancelHorseDamage.class

@@ -1,9 +1,6 @@
 package me.loudsnow.mcplug.packets;
 
-import com.comphenix.protocol.PacketType;
-import com.comphenix.protocol.ProtocolLibrary;
-import com.comphenix.protocol.ProtocolManager;
-import com.comphenix.protocol.events.PacketContainer;
+
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -20,7 +17,7 @@ public class Boom implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
-        ProtocolManager manager = ProtocolLibrary.getProtocolManager();
+        /*ProtocolManager manager = ProtocolLibrary.getProtocolManager();
         Player p = (Player) sender;
         p.getLineOfSight(null, 50).stream()
                 .filter(block -> block.getType() != Material.AIR)
@@ -40,7 +37,7 @@ public class Boom implements CommandExecutor {
                         e.printStackTrace();
                     }
 
-                });
+                });*/
         return true;
     }
 }

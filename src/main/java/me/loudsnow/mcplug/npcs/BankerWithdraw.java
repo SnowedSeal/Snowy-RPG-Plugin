@@ -39,12 +39,13 @@ public class BankerWithdraw implements Listener {
                         int num = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
                         if (num >= 16) {
                             int i = 0;
-                            for (ItemStack itemStack : player.getInventory()) {
-                                if (itemStack == null) {
+/*                            for(ItemStack is : player.getInventory().getContents()) {
+                                Inventory inv = player.getInventory();
+                                if (is == null){
+                                    if (is.get)
                                     i++;
-                                    player.sendMessage("Wowie");
                                 }
-                            }
+                            }*/
                             player.sendMessage(String.valueOf(i));
                             if (i > 1) {
                                 pbalance.set(namespacedKey, PersistentDataType.INTEGER, num - 16);

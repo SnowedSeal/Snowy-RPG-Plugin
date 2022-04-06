@@ -31,19 +31,26 @@ public class ChatMessage implements Listener {
     public void onPlayerChat(AsyncPlayerChatEvent ev){
         Player p = ev.getPlayer();
         if (bank1.containsKey(p.getUniqueId().toString())) {
-            int amount = 0;
+            int amount = -1;
+            boolean stop = false;
             ev.setCancelled(true);
             try {
                 amount = Integer.parseInt(ev.getMessage());
             } catch (Exception e) {
                 p.sendMessage(ChatColor.RED + "Incorrect Syntax! Please try again.");
+                bank1.remove(p.getUniqueId().toString());
+                stop = true;
             }
             if (amount == 0){
-                p.sendMessage(ChatColor.RED + "You must choose a number greater than 0!");
+                if (stop == false) {
+                    p.sendMessage(ChatColor.RED + "You must choose a number greater than 0!");
+                    bank1.remove(p.getUniqueId().toString());
+                }
             }
             NamespacedKey namespacedKey = new NamespacedKey(instance, "balance");
             PersistentDataContainer pbalance = p.getPersistentDataContainer();
             int num = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
+            bank1.remove(p.getUniqueId().toString());
             if (amount != 0 && num >= amount) {
                 pbalance.set(namespacedKey, PersistentDataType.INTEGER, num - amount);
                 ItemStack sunflower = new ItemStack(Material.SUNFLOWER, amount);
@@ -52,6 +59,7 @@ public class ChatMessage implements Listener {
 
             } else {
                 p.sendMessage(ChatColor.RED + "You don't have enough!");
+                bank1.remove(p.getUniqueId().toString());
             }
 
         }

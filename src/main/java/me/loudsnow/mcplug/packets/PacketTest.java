@@ -1,46 +1,80 @@
 package me.loudsnow.mcplug.packets;
 
-
-import com.comphenix.packetwrapper.WrapperPlayServerEntityMetadata;
-import com.comphenix.packetwrapper.WrapperPlayServerNamedEntitySpawn;
-import com.comphenix.packetwrapper.WrapperPlayServerPlayerInfo;
-import com.comphenix.packetwrapper.WrapperPlayServerSpawnEntity;
-import com.comphenix.protocol.PacketType;
-import com.comphenix.protocol.ProtocolLibrary;
-import com.comphenix.protocol.ProtocolManager;
-import com.comphenix.protocol.events.PacketContainer;
-
-import com.comphenix.protocol.wrappers.*;
-import me.loudsnow.mcplug.EasyMetadataPacket;
-import net.dv8tion.jda.api.interactions.commands.OptionType;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+import com.github.retrooper.packetevents.PacketEvents;
+import com.github.retrooper.packetevents.protocol.entity.data.EntityData;
+import com.github.retrooper.packetevents.protocol.entity.data.EntityDataType;
+import com.github.retrooper.packetevents.protocol.entity.data.EntityDataTypes;
+import com.github.retrooper.packetevents.protocol.entity.type.EntityType;
+import com.github.retrooper.packetevents.protocol.entity.type.EntityTypes;
+import com.github.retrooper.packetevents.util.Vector3d;
+import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerEntityMetadata;
+import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerSpawnEntity;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
-import org.bukkit.entity.Wither;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.inventory.InventoryMoveItemEvent;
-import org.bukkit.event.player.PlayerTeleportEvent;
 import org.jetbrains.annotations.NotNull;
-import org.yaml.snakeyaml.serializer.Serializer;
+import org.json.simple.JSONObject;
 
-import javax.swing.text.DefaultStyledDocument;
-import java.lang.reflect.InvocationTargetException;
+import java.awt.*;
 import java.util.*;
-
-import static me.loudsnow.mcplug.Main.instance;
-import static me.loudsnow.mcplug.Main.manager;
+import java.util.List;
 
 public class PacketTest implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
-        PacketContainer spawner = new PacketContainer(PacketType.Play.Server.NAMED_ENTITY_SPAWN);
+        Player p = (Player) sender;
+        Location loc = p.getLocation();
+        double locx = p.getLocation().getX();
+        double locy =p.getLocation().getY();
+        double locz =p.getLocation().getZ();
+        Vector3d vec = new Vector3d(locx, locy, locz);
+        WrapperPlayServerSpawnEntity packet = new WrapperPlayServerSpawnEntity(1000, Optional.of(UUID.randomUUID()), EntityTypes.ARMOR_STAND, new Vector3d(locx, locy, locz), (float) 0, (float) 0, 0, Optional.empty());
+        List<EntityData> list = new ArrayList<>();
+        List<EntityData> list1 = new ArrayList<>();
+
+        //EntityData visible = new EntityData(0, EntityDataTypes.BYTE, (byte) 0x20);
+        //EntityData name = new EntityData(2, EntityDataTypes.OPTIONAL_COMPONENT, Component.text("test", NamedTextColor.GREEN, TextDecoration.BOLD));
+        EntityData name = new EntityData(2, EntityDataTypes.OPTIONAL_COMPONENT, Optional.of(Component.text("Test", NamedTextColor.GREEN, TextDecoration.BOLD)));
+        EntityData namevisible = new EntityData(3, EntityDataTypes.BOOLEAN, true);
+        //list.add(visible);
+        list1.add(name);
+        list.add(namevisible);
+        WrapperPlayServerEntityMetadata packet1 = new WrapperPlayServerEntityMetadata(1000, list);
+        WrapperPlayServerEntityMetadata packet2 = new WrapperPlayServerEntityMetadata(1000, list1);
+
+        PacketEvents.getAPI().getPlayerManager().sendPacket(p, packet);
+        PacketEvents.getAPI().getPlayerManager().sendPacket(p, packet1);
+        PacketEvents.getAPI().getPlayerManager().sendPacket(p, packet2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*PacketContainer spawner = new PacketContainer(PacketType.Play.Server.NAMED_ENTITY_SPAWN);
         ProtocolManager manager = ProtocolLibrary.getProtocolManager();
         Player p = (Player) sender;
         Location location = p.getLocation();
@@ -69,7 +103,7 @@ public class PacketTest implements CommandExecutor {
             e.printStackTrace();
         }
 
-
+*/
         return true;
     }
 }

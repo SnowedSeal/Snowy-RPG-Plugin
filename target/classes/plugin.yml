@@ -1,10 +1,11 @@
 name: SnowyRPGPlugin
-version: ${project.version}
+version: 2.5
 author: Loudbook
 main: me.loudsnow.mcplug.Main
 description: Snowy RPG Plugin
 api-version: 1.18
-depend: [ProtocolLib]
+load: POSTWORLD
+depend: [ProtocolLib, packetevents]
 commands:
   booktest:
     description: Test for Book

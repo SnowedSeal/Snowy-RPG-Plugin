@@ -23,6 +23,13 @@ import static me.loudsnow.mcplug.Main.bank;
 import static me.loudsnow.mcplug.Main.instance;
 
 
+// wait i can see this on my own ide cant i yea? alr then
+// what i here to do?
+// follow me to a new class
+// ok
+// where u at
+// accessories package at the top
+
 public class BankerInventory implements Listener{
     @EventHandler
     public void onPlayerClickInventory(InventoryClickEvent e) {

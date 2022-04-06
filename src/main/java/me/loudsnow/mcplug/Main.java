@@ -1,7 +1,9 @@
 package me.loudsnow.mcplug;
 
-import com.comphenix.protocol.ProtocolLibrary;
-import com.comphenix.protocol.ProtocolManager;
+//import com.comphenix.protocol.ProtocolLibrary;
+//import com.comphenix.protocol.ProtocolManager;
+import com.github.retrooper.packetevents.PacketEvents;
+import io.github.retrooper.packetevents.factory.spigot.SpigotPacketEventsBuilder;
 import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import lombok.Getter;
@@ -68,6 +70,15 @@ import java.util.*;
 import static net.dv8tion.jda.api.interactions.commands.OptionType.USER;
 
 public class Main extends JavaPlugin {
+    @Override
+    public void onLoad() {
+        PacketEvents.setAPI(SpigotPacketEventsBuilder.build(this));
+        //Are all listeners read only?
+        PacketEvents.getAPI().getSettings().readOnlyListeners(true)
+                .checkForUpdates(true)
+                .bStats(true);
+        PacketEvents.getAPI().load();
+    }
     public static File file;
     public static Main instance;
 
@@ -98,15 +109,15 @@ public class Main extends JavaPlugin {
     public static HashMap<String, Boolean> abuseBoolean = new HashMap<>();
     public static HashMap<String, Boolean> errorBoolean = new HashMap<>();
     public static HashMap<String, Boolean> deathBoolean = new HashMap<>();
-    public static ProtocolManager manager = ProtocolLibrary.getProtocolManager();
+    //public static ProtocolManager manager = ProtocolLibrary.getProtocolManager();
 
     @Getter
     public static JDA jda;
     private TextChannel textChannel;
     @Override
     public void onEnable() {
-        ProtocolManager manager = ProtocolLibrary.getProtocolManager();
-
+//        ProtocolManager manager = ProtocolLibrary.getProtocolManager();
+        PacketEvents.getAPI().init();
         /*
         manager.addPacketListener(new PacketAdapter(this, ListenerPriority.NORMAL, PacketType.Play.Client.POSITION) {
             @Override
@@ -271,8 +282,8 @@ public class Main extends JavaPlugin {
 
         console.sendMessage("================================");
         console.sendMessage("Snowy RPG Plugin Enabled");
-        console.sendMessage("Version 2.4");
-        console.sendMessage("Latest Major Update: Spawning Algorithm");
+        console.sendMessage("Version 2.5");
+        console.sendMessage("Latest Major Update: Packets");
         console.sendMessage("================================");
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable(){
             public void run(){
@@ -473,7 +484,7 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-
+        PacketEvents.getAPI().terminate();
         TextChannel channel = jda.getGuildById("945036462141890601").getTextChannelById("946929911095001118");
         EmbedBuilder eb = new EmbedBuilder();
         eb.setColor(new Color(0xFF0000));
