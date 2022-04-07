@@ -4,40 +4,42 @@ package me.loudsnow.mcplug;
 //import com.comphenix.protocol.ProtocolManager;
 import com.github.retrooper.packetevents.PacketEvents;
 import io.github.retrooper.packetevents.factory.spigot.SpigotPacketEventsBuilder;
-import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
 import lombok.Getter;
 import me.loudsnow.mcplug.cancelevents.*;
-import me.loudsnow.mcplug.desolation.DesolationAbilityListener;
-import me.loudsnow.mcplug.desolation.DesolationAttackListener;
-import me.loudsnow.mcplug.desolation.DesolationCommand;
-import me.loudsnow.mcplug.discord.*;
-import me.loudsnow.mcplug.flameblade.FlamebladeCommand;
-import me.loudsnow.mcplug.flameblade.FlamebladeListener;
-import me.loudsnow.mcplug.forestsword.ForestSwordCommand;
-import me.loudsnow.mcplug.glowingpendant.GlowingPendantCommand;
-import me.loudsnow.mcplug.meteorslam.MeteorSlamCommand;
-import me.loudsnow.mcplug.meteorslam.MeteorSlamListener;
-import me.loudsnow.mcplug.mobdeaths.lvl1death;
-import me.loudsnow.mcplug.npcs.*;
-import me.loudsnow.mcplug.packets.Boom;
-import me.loudsnow.mcplug.packets.PacketTest;
-import me.loudsnow.mcplug.report.ReportCommand;
-import me.loudsnow.mcplug.report.ReportTabComplete;
-import me.loudsnow.mcplug.rookieglider.RookieGliderCommand;
-import me.loudsnow.mcplug.rookieglider.RookieGliderListener;
-import me.loudsnow.mcplug.salvation.SalvationCommand;
-import me.loudsnow.mcplug.salvation.SalvationListener;
-import me.loudsnow.mcplug.shadowleap.ShadowleapCommand;
-import me.loudsnow.mcplug.shadowleap.ShadowleapListener;
-import me.loudsnow.mcplug.snowblade.SnowBladeListener;
-import me.loudsnow.mcplug.snowblade.SnowbladeCommand;
-import me.loudsnow.mcplug.starterdagger.starterdaggerCommand;
-import me.loudsnow.mcplug.startersword.starterswordCommand;
-import me.loudsnow.mcplug.truedeso.trueDesoCommand;
-import me.loudsnow.mcplug.truedeso.trueDesoListener;
-import me.loudsnow.mcplug.windstep.WindstepCommand;
-import me.loudsnow.mcplug.windstep.WindstepListener;
+import me.loudsnow.mcplug.mobs.*;
+import me.loudsnow.mcplug.system.PlayerJoin;
+import me.loudsnow.mcplug.system.TestHashCommand;
+import me.loudsnow.mcplug.system.TrainingDummy;
+import me.loudsnow.mcplug.weapons.desolation.DesolationAbilityListener;
+import me.loudsnow.mcplug.weapons.desolation.DesolationAttackListener;
+import me.loudsnow.mcplug.weapons.desolation.DesolationCommand;
+import me.loudsnow.mcplug.system.discord.*;
+import me.loudsnow.mcplug.weapons.flameblade.FlamebladeCommand;
+import me.loudsnow.mcplug.weapons.flameblade.FlamebladeListener;
+import me.loudsnow.mcplug.weapons.forestsword.ForestSwordCommand;
+import me.loudsnow.mcplug.accessories.glowingpendant.GlowingPendantCommand;
+import me.loudsnow.mcplug.weapons.meteorslam.MeteorSlamCommand;
+import me.loudsnow.mcplug.weapons.meteorslam.MeteorSlamListener;
+import me.loudsnow.mcplug.mobs.mobdeaths.lvl1death;
+import me.loudsnow.mcplug.mobs.npcs.*;
+import me.loudsnow.mcplug.system.packets.Boom;
+import me.loudsnow.mcplug.system.packets.PacketTest;
+import me.loudsnow.mcplug.system.report.ReportCommand;
+import me.loudsnow.mcplug.system.report.ReportTabComplete;
+import me.loudsnow.mcplug.armor.rookieglider.RookieGliderCommand;
+import me.loudsnow.mcplug.armor.rookieglider.RookieGliderListener;
+import me.loudsnow.mcplug.accessories.salvation.SalvationCommand;
+import me.loudsnow.mcplug.accessories.salvation.SalvationListener;
+import me.loudsnow.mcplug.armor.shadowleap.ShadowleapCommand;
+import me.loudsnow.mcplug.armor.shadowleap.ShadowleapListener;
+import me.loudsnow.mcplug.weapons.snowblade.SnowBladeListener;
+import me.loudsnow.mcplug.weapons.snowblade.SnowbladeCommand;
+import me.loudsnow.mcplug.weapons.starterdagger.starterdaggerCommand;
+import me.loudsnow.mcplug.weapons.startersword.starterswordCommand;
+import me.loudsnow.mcplug.weapons.truedeso.trueDesoCommand;
+import me.loudsnow.mcplug.weapons.truedeso.trueDesoListener;
+import me.loudsnow.mcplug.armor.windstep.WindstepCommand;
+import me.loudsnow.mcplug.armor.windstep.WindstepListener;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -116,21 +118,7 @@ public class Main extends JavaPlugin {
     private TextChannel textChannel;
     @Override
     public void onEnable() {
-//        ProtocolManager manager = ProtocolLibrary.getProtocolManager();
         PacketEvents.getAPI().init();
-        /*
-        manager.addPacketListener(new PacketAdapter(this, ListenerPriority.NORMAL, PacketType.Play.Client.POSITION) {
-            @Override
-            public void onPacketReceiving(PacketEvent event) {
-                PacketContainer packet = event.getPacket();
-                Player p = event.getPlayer();
-                double x = packet.getDoubles().read(0);
-                double y = packet.getDoubles().read(1);
-                double z = packet.getDoubles().read(2);
-                boolean onGround = packet.getBooleans().read(0);
-                p.sendMessage("INBOUND X: " + x + " Y: " + y + " Z: " + z + " : On Ground? " + onGround);
-            }
-        });*/
         this.reloadConfig();
         ConsoleCommandSender console = getServer().getConsoleSender();
         String botToken = getConfig().getString("discord-token");
@@ -143,8 +131,10 @@ public class Main extends JavaPlugin {
             jda.awaitReady();
         } catch (LoginException e) {
             e.printStackTrace();
+            return;
         } catch (InterruptedException e) {
             e.printStackTrace();
+            return;
         }
         if (jda == null){
             console.sendMessage("Unable to connect to Discord!");
