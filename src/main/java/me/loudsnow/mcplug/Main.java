@@ -144,6 +144,8 @@ public class Main extends JavaPlugin {
         commands.addCommands(
                 Commands.slash("help", "Gives info on how to join the server!")
                         .addOptions(new OptionData(USER, "user", "The user to ping in the process")));
+        commands.addCommands(
+                Commands.slash("tps", "Get the TPS of the server."));
         commands.queue();
         TextChannel channel = jda.getGuildById("945036462141890601").getTextChannelById("946929911095001118");
         channel.sendMessage("**Connected to Websocket**").queue();
@@ -360,7 +362,16 @@ public class Main extends JavaPlugin {
                 }
             }
         }, 20, 2);*/
-
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
+            @Override
+            public void run() {
+                double [] tps = Bukkit.getServer().getTPS();
+                if (tps[0] <= 17.5){
+                    TextChannel textChannel = guild.getTextChannelById("947165289399869441");
+                    textChannel.sendMessage("**<@664597683511492608>** TPS is below 17.5!");
+                }
+            }
+        },10, 300);
         Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
             @Override
             public void run() {

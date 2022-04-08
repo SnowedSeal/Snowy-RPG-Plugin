@@ -5,12 +5,16 @@ import com.github.retrooper.packetevents.protocol.entity.data.EntityData;
 import com.github.retrooper.packetevents.protocol.entity.data.EntityDataTypes;
 import com.github.retrooper.packetevents.protocol.entity.type.EntityTypes;
 import com.github.retrooper.packetevents.util.Vector3d;
+import com.github.retrooper.packetevents.util.Vector3i;
+import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerBlockChange;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerEntityMetadata;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerSpawnEntity;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -26,10 +30,25 @@ public class PacketTest implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         Player p = (Player) sender;
         Location loc = p.getLocation();
-        double locx = p.getLocation().getX();
-        double locy =p.getLocation().getY();
-        double locz =p.getLocation().getZ();
-        Vector3d vec = new Vector3d(locx, locy, locz);
+        int locx = (int) p.getLocation().getX();
+        int locy = (int) p.getLocation().getY();
+        int locz = (int) p.getLocation().getZ();
+        Vector3i vec = new Vector3i(locx, locy, locz);
+        WrapperPlayServerBlockChange blockChange = new WrapperPlayServerBlockChange(vec, 1);
+        PacketEvents.getAPI().getPlayerManager().sendPacket(p, blockChange);
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
         WrapperPlayServerSpawnEntity packet = new WrapperPlayServerSpawnEntity(1000, Optional.of(UUID.randomUUID()), EntityTypes.ARMOR_STAND, new Vector3d(locx, locy, locz), (float) 0, (float) 0, 0, Optional.empty());
         List<EntityData> list = new ArrayList<>();
         List<EntityData> list1 = new ArrayList<>();
@@ -47,7 +66,7 @@ public class PacketTest implements CommandExecutor {
         PacketEvents.getAPI().getPlayerManager().sendPacket(p, packet);
         PacketEvents.getAPI().getPlayerManager().sendPacket(p, packet1);
         PacketEvents.getAPI().getPlayerManager().sendPacket(p, packet2);
-
+*/
 
 
 

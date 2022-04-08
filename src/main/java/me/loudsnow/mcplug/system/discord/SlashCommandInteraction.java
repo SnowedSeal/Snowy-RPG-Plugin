@@ -4,6 +4,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import org.bukkit.Bukkit;
 
 public class SlashCommandInteraction extends ListenerAdapter{
     @Override
@@ -14,7 +15,7 @@ public class SlashCommandInteraction extends ListenerAdapter{
             eb.setTitle("**Server Info**");
             eb.setImage("https://i.imgur.com/xAcK8NW.jpg");
             eb.addBlankField(false);
-            eb.setDescription("**Server IP:** play.snowyrpg.xyz\n**Direct IP:** 51.161.16.124:25578\n \n__**Server Status:** Alpha Phase, whitelist only!__ \n \nPlease contact Loudbook for more info.");
+            eb.setDescription("**Server IP:** play.snowyrpg.xyz\n**Direct IP:** 23.158.176.66:25566\n \n__**Server Status:** Alpha Phase, whitelist only!__ \n \nPlease contact Loudbook for more info.");
             eb.setFooter("Snowy RPG Bot written in Java by Loudbook");
             e.replyEmbeds(eb.build()).queue();
             try{
@@ -23,6 +24,11 @@ public class SlashCommandInteraction extends ListenerAdapter{
                 channel.sendMessage("<@" + user + ">").queue();
             } catch (NullPointerException ex) {
             }
+        }
+        if (e.getName().equals("tps")){
+            TextChannel channel = e.getTextChannel();
+            double [] tps = Bukkit.getServer().getTPS();
+            e.reply("**Current TPS:** " + Math.round(tps[0] * 100 / 100)).queue();
         }
     }
 }

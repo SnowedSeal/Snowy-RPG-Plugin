@@ -10,7 +10,7 @@ import static me.loudsnow.mcplug.Main.*;
 import static org.bukkit.Bukkit.getServer;
 
 
-class TestHashCommand implements CommandExecutor {
+public class TestHashCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
