@@ -19,6 +19,7 @@ me\loudsnow\mcplug\armor\shadowleap\ShadowleapListener$1.class
 me\loudsnow\mcplug\weapons\desolation\DesolationAbilityListener$1.class
 me\loudsnow\mcplug\mobs\npcs\HorseListener$1.class
 me\loudsnow\mcplug\cancelevents\CancelFire.class
+me\loudsnow\mcplug\system\discord\JoinEvent$1.class
 me\loudsnow\mcplug\cancelevents\CancelItemPickup.class
 me\loudsnow\mcplug\weapons\desolation\DesolationAttackListener.class
 me\loudsnow\mcplug\cancelevents\CancelBerryHarvest.class
@@ -30,10 +31,10 @@ me\loudsnow\mcplug\mobs\Lvl1Mob$2.class
 me\loudsnow\mcplug\weapons\flameblade\FlamebladeListener$2.class
 me\loudsnow\mcplug\weapons\startersword\starterswordCommand.class
 me\loudsnow\mcplug\Main$4$1.class
+me\loudsnow\mcplug\mobs\npcs\NPC1$1.class
 me\loudsnow\mcplug\mobs\npcs\BankerWithdraw.class
 me\loudsnow\mcplug\mobs\npcs\NPC2.class
 me\loudsnow\mcplug\armor\rookieglider\RookieGliderListener.class
-me\loudsnow\mcplug\system\PlayerJoin$1.class
 me\loudsnow\mcplug\Main$3.class
 me\loudsnow\mcplug\weapons\flameblade\FlamebladeCommand.class
 me\loudsnow\mcplug\mobs\npcs\HorseListener.class
@@ -50,7 +51,6 @@ me\loudsnow\mcplug\weapons\flameblade\FlamebladeListener$1.class
 me\loudsnow\mcplug\Main.class
 me\loudsnow\mcplug\mobs\npcs\HorseListener$2.class
 me\loudsnow\mcplug\accessories\glowingpendant\GlowingPendantCommand.class
-me\loudsnow\mcplug\system\PlayerJoin.class
 me\loudsnow\mcplug\system\discord\DiscordMessage.class
 me\loudsnow\mcplug\weapons\forestsword\ForestSwordCommand.class
 me\loudsnow\mcplug\mobs\npcs\NPC3.class

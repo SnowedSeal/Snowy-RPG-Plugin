@@ -12,16 +12,16 @@ import net.dv8tion.jda.api.entities.TextChannel;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
 
 import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -67,5 +67,23 @@ public class JoinEvent implements Listener {
         PacketEvents.getAPI().getPlayerManager().sendPacket(p, packet);
 
         PacketEvents.getAPI().getPlayerManager().sendPacket(p, packet1);
+        p.sendTitle("" + ChatColor.DARK_GREEN + ChatColor.BOLD + "The Snowy RPG", "" + ChatColor.GREEN + ChatColor.BOLD + "Welcome!", 75, 100, 50);
+        Bukkit.getScheduler().runTaskLater(instance, new Runnable() {
+            @Override
+            public void run() {
+                p.playSound(p.getLocation(), Sound.BLOCK_PISTON_EXTEND, 100, 100);
+            }
+        }, 50);
+        NamespacedKey namespacedKey = new NamespacedKey(instance, "quest1");
+        PersistentDataContainer quest1 = p.getPersistentDataContainer();
+        if (!p.hasPlayedBefore()){
+            quest1.set(namespacedKey, PersistentDataType.INTEGER, 0);
+
+        } else if (p.getName().equals("Loudbook")){
+            quest1.set(namespacedKey, PersistentDataType.INTEGER, 0);
+        }
+        if (quest1.get(namespacedKey, PersistentDataType.INTEGER) == 0){
+            p.sendMessage(ChatColor.GREEN + "Please find Gilbert in the yellow building to start your journey!");
+        }
     }
 }

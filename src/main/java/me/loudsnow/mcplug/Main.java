@@ -7,7 +7,6 @@ import io.github.retrooper.packetevents.factory.spigot.SpigotPacketEventsBuilder
 import lombok.Getter;
 import me.loudsnow.mcplug.cancelevents.*;
 import me.loudsnow.mcplug.mobs.*;
-import me.loudsnow.mcplug.system.PlayerJoin;
 import me.loudsnow.mcplug.system.TestHashCommand;
 import me.loudsnow.mcplug.system.TrainingDummy;
 import me.loudsnow.mcplug.weapons.desolation.DesolationAbilityListener;
@@ -215,7 +214,6 @@ public class Main extends JavaPlugin {
         this.getCommand("testspawn").setExecutor(new Lvl1Mob());
         getServer().getPluginManager().registerEvents(new HorseDeath(), this);
         getServer().getPluginManager().registerEvents(new QuitEvent(), this);
-        getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
         getServer().getPluginManager().registerEvents(new CancelPVP(), this);
         getServer().getPluginManager().registerEvents(new CancelHorseDamage(), this);
         getServer().getPluginManager().registerEvents(new CancelSaddle(), this);
