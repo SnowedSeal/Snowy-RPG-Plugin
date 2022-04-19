@@ -16,7 +16,7 @@ public class SlashCommandInteraction extends ListenerAdapter{
             eb.setImage("https://i.imgur.com/xAcK8NW.jpg");
             eb.addBlankField(false);
             eb.setDescription("**Server IP:** play.snowyrpg.xyz\n**Direct IP:** 23.158.176.66:25566\n \n__**Server Status:** Alpha Phase, whitelist only!__ \n \nPlease contact Loudbook for more info.");
-            eb.setFooter("Snowy RPG Bot written in Java by Loudbook");
+            eb.setFooter("Septicraft Bot written in Java by Loudbook");
             e.replyEmbeds(eb.build()).queue();
             try{
                 String user = e.getOption("user").getAsString();

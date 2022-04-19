@@ -1,14 +1,19 @@
 package me.loudsnow.mcplug;
-
 //import com.comphenix.protocol.ProtocolLibrary;
 //import com.comphenix.protocol.ProtocolManager;
 import com.github.retrooper.packetevents.PacketEvents;
+import com.mongodb.DB;
+        import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import io.github.retrooper.packetevents.factory.spigot.SpigotPacketEventsBuilder;
 import lombok.Getter;
 import me.loudsnow.mcplug.cancelevents.*;
 import me.loudsnow.mcplug.mobs.*;
 import me.loudsnow.mcplug.system.TestHashCommand;
 import me.loudsnow.mcplug.system.TrainingDummy;
+import me.loudsnow.mcplug.system.mongodb.MongoDBTest;
 import me.loudsnow.mcplug.weapons.desolation.DesolationAbilityListener;
 import me.loudsnow.mcplug.weapons.desolation.DesolationAttackListener;
 import me.loudsnow.mcplug.weapons.desolation.DesolationCommand;
@@ -48,6 +53,7 @@ import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
+import org.bson.Document;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeInstance;
@@ -65,7 +71,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.List;
+        import java.util.List;
 import java.util.*;
 
 import static net.dv8tion.jda.api.interactions.commands.OptionType.USER;
@@ -111,21 +117,32 @@ public class Main extends JavaPlugin {
     public static HashMap<String, Boolean> errorBoolean = new HashMap<>();
     public static HashMap<String, Boolean> deathBoolean = new HashMap<>();
     //public static ProtocolManager manager = ProtocolLibrary.getProtocolManager();
+    public static MongoCollection<Document> mongoCollection;
 
     @Getter
     public static JDA jda;
     private TextChannel textChannel;
     @Override
     public void onEnable() {
+        ConsoleCommandSender console = getServer().getConsoleSender();
+
+        //MongoClient mongoClient;
+        DB db;
+
+        MongoClient mongoClient = MongoClients.create(Objects.requireNonNull(getConfig().getString("mongodb-token")));
+        MongoDatabase mongoDatabase = mongoClient.getDatabase("Septicraft");
+
+        mongoCollection = mongoDatabase.getCollection("PlayerData");
+        getLogger().info(ChatColor.GREEN + "Connected to Database");
+
         PacketEvents.getAPI().init();
         this.reloadConfig();
-        ConsoleCommandSender console = getServer().getConsoleSender();
         String botToken = getConfig().getString("discord-token");
         try {
             jda = JDABuilder.createDefault(botToken)
                     .addEventListeners(new DiscordMessage())
                     .addEventListeners(new SlashCommandInteraction())
-                    .setActivity(Activity.listening("all the people on the server!"))
+                    .setActivity(Activity.listening("Septicraft..."))
                     .build();
             jda.awaitReady();
         } catch (LoginException e) {
@@ -135,7 +152,7 @@ public class Main extends JavaPlugin {
             e.printStackTrace();
             return;
         }
-        if (jda == null){
+        if (jda == null) {
             console.sendMessage("Unable to connect to Discord!");
         }
         Guild guild = jda.getGuildById("945036462141890601");
@@ -151,14 +168,9 @@ public class Main extends JavaPlugin {
         EmbedBuilder eb = new EmbedBuilder();
         eb.setColor(new Color(0x00FF00));
         eb.setTitle(":white_check_mark:   **Server has started!**   :white_check_mark:");
-        eb.setFooter("Snowy RPG Bot written in Java by Loudbook");
+        eb.setFooter("Septicraft Bot written in Java by Loudbook");
         guild.updateCommands();
         channel.sendMessageEmbeds(eb.build()).queue();
-
-
-
-
-
 
 
         instance = this;
@@ -212,6 +224,7 @@ public class Main extends JavaPlugin {
         this.getCommand("hashmaptest").setExecutor(new TestHashCommand());
         this.getCommand("whistle").setExecutor(new Whistle());
         this.getCommand("testspawn").setExecutor(new Lvl1Mob());
+        this.getCommand("mongotest").setExecutor(new MongoDBTest());
         getServer().getPluginManager().registerEvents(new HorseDeath(), this);
         getServer().getPluginManager().registerEvents(new QuitEvent(), this);
         getServer().getPluginManager().registerEvents(new CancelPVP(), this);
@@ -234,8 +247,6 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SnowBladeListener(), this);
         this.getCommand("packettest").setExecutor(new PacketTest());
         instance = instance;
-
-
 
 
         Properties properties = new Properties();
@@ -271,18 +282,18 @@ public class Main extends JavaPlugin {
         }
 
         console.sendMessage("================================");
-        console.sendMessage("Snowy RPG Plugin Enabled");
+        console.sendMessage("Septicraft Plugin Enabled");
         console.sendMessage("Version 2.5");
-        console.sendMessage("Latest Major Update: Packets");
+        console.sendMessage("Latest Major Update: MongoDB");
         console.sendMessage("================================");
-        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable(){
-            public void run(){
-                Location EntityArea = new Location(Bukkit.getWorld("world"),328, 111, 196);
+        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
+            public void run() {
+                Location EntityArea = new Location(Bukkit.getWorld("world"), 328, 111, 196);
                 World world = Bukkit.getServer().getWorld("world");
                 List<Entity> nearbyEntities = (List<Entity>) EntityArea.getWorld().getNearbyEntities(EntityArea, 60, 15, 60);
 
-                for(Entity e : world.getEntities()){
-                    if (nearbyEntities.contains(e)){
+                for (Entity e : world.getEntities()) {
+                    if (nearbyEntities.contains(e)) {
                         if (e instanceof Player) {
                             if (e.isInWater()) {
                                 ((Player) e).damage(1.5);
@@ -292,27 +303,27 @@ public class Main extends JavaPlugin {
                     }
                 }
             }
-        },20, 20);
-        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable(){
-            public void run(){
-                Location EntityArea = new Location(Bukkit.getWorld("world"),149, 116, 38);
+        }, 20, 20);
+        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
+            public void run() {
+                Location EntityArea = new Location(Bukkit.getWorld("world"), 149, 116, 38);
                 World world = Bukkit.getServer().getWorld("world");
                 List<Entity> nearbyEntities = (List<Entity>) EntityArea.getWorld().getNearbyEntities(EntityArea, 41, 41, 41);
                 List<Entity> tooClose = (List<Entity>) EntityArea.getWorld().getNearbyEntities(EntityArea, 38, 38, 38);
-                for(Entity e : world.getEntities()){
-                    if (e instanceof Zombie){
+                for (Entity e : world.getEntities()) {
+                    if (e instanceof Zombie) {
                         if (nearbyEntities.contains(e)) {
                             Vector dir = e.getLocation().getDirection();
                             e.setVelocity(dir.multiply(-1));
                         }
-                        if (tooClose.contains(e)){
+                        if (tooClose.contains(e)) {
                             e.remove();
                             world.spawnParticle(Particle.DRAGON_BREATH, e.getLocation(), 50, 0, 0, 0, 0.05);
                         }
                     }
                 }
             }
-        },20, 20);
+        }, 20, 20);
 /*        Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
             @Override
             public void run() {
@@ -363,69 +374,69 @@ public class Main extends JavaPlugin {
         Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
             @Override
             public void run() {
-                double [] tps = Bukkit.getServer().getTPS();
-                if (tps[0] <= 17.5){
+                double[] tps = Bukkit.getServer().getTPS();
+                if (tps[0] <= 17.5) {
                     TextChannel textChannel = guild.getTextChannelById("947165289399869441");
                     textChannel.sendMessage("**<@664597683511492608>** TPS is below 17.5!");
                 }
             }
-        },10, 300);
+        }, 10, 300);
         Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
             @Override
             public void run() {
-            World world = Bukkit.getServer().getWorld("world");
-            int i = 0;
+                World world = Bukkit.getServer().getWorld("world");
+                int i = 0;
 
-            for (Entity e : world.getEntities()){
-                NamespacedKey namespacedKey = new NamespacedKey(instance, "level");
-                PersistentDataContainer levels = e.getPersistentDataContainer();
-                if (levels.has(namespacedKey, PersistentDataType.STRING)) {
-                    if (levels.get(namespacedKey, PersistentDataType.STRING).contains("1")) {
-                        i++;
+                for (Entity e : world.getEntities()) {
+                    NamespacedKey namespacedKey = new NamespacedKey(instance, "level");
+                    PersistentDataContainer levels = e.getPersistentDataContainer();
+                    if (levels.has(namespacedKey, PersistentDataType.STRING)) {
+                        if (levels.get(namespacedKey, PersistentDataType.STRING).contains("1")) {
+                            i++;
 
+                        }
                     }
                 }
-            }
-            if (i <= 100){
-                NamespacedKey namespacedKey = new NamespacedKey(instance, "level");
-                for (i = 0; i < 25; i++) {
-                    int xmax = 229;
-                    int xmin = 97;
-                    int zmax = 130;
-                    int zmin = -50;
-                    int xrandom = (int) Math.floor(Math.random() * (xmax - xmin + 1) + xmin);
-                    int zrandom = (int) Math.floor(Math.random() * (zmax - zmin + 1) + zmin);
+                if (i <= 100) {
+                    NamespacedKey namespacedKey = new NamespacedKey(instance, "level");
+                    for (i = 0; i < 25; i++) {
+                        int xmax = 229;
+                        int xmin = 97;
+                        int zmax = 130;
+                        int zmin = -50;
+                        int xrandom = (int) Math.floor(Math.random() * (xmax - xmin + 1) + xmin);
+                        int zrandom = (int) Math.floor(Math.random() * (zmax - zmin + 1) + zmin);
 
-                    while (xrandom > 108 && xrandom < 196 && zrandom > 1 && zrandom < 92){
-                        xrandom = (int) Math.floor(Math.random() * (xmax - xmin + 1) + xmin);
-                        zrandom = (int)Math.floor(Math.random()*(zmax-zmin+1)+zmin);
-                    }
-
-                    final double[] count = {7};
-                    int finalXrandom1 = xrandom;
-                    int finalZrandom1 = zrandom;
-                    Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
-                        @Override
-                        public void run() {
-                            if (world.getHighestBlockAt(finalXrandom1, finalZrandom1).getBlockData().getMaterial().equals(Material.WATER) || world.getHighestBlockAt(finalXrandom1, finalZrandom1).getBlockData().getMaterial().equals(Material.AZALEA_LEAVES) || world.getHighestBlockAt(finalXrandom1, finalZrandom1).getY() >= 115){
-                            } else {
-                                count[0] = count[0] - 0.5;
-                                Location entityloc = new Location(world, finalXrandom1, world.getHighestBlockAt(finalXrandom1, finalZrandom1).getY() + count[0], finalZrandom1);
-                                world.spawnParticle(Particle.SMOKE_LARGE, entityloc, 10, 0, 0, 0, 0.1);
-                            }
+                        while (xrandom > 108 && xrandom < 196 && zrandom > 1 && zrandom < 92) {
+                            xrandom = (int) Math.floor(Math.random() * (xmax - xmin + 1) + xmin);
+                            zrandom = (int) Math.floor(Math.random() * (zmax - zmin + 1) + zmin);
                         }
-                    }, 5, 2);
+
+                        final double[] count = {7};
+                        int finalXrandom1 = xrandom;
+                        int finalZrandom1 = zrandom;
+                        Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
+                            @Override
+                            public void run() {
+                                if (world.getHighestBlockAt(finalXrandom1, finalZrandom1).getBlockData().getMaterial().equals(Material.WATER) || world.getHighestBlockAt(finalXrandom1, finalZrandom1).getBlockData().getMaterial().equals(Material.AZALEA_LEAVES) || world.getHighestBlockAt(finalXrandom1, finalZrandom1).getY() >= 115) {
+                                } else {
+                                    count[0] = count[0] - 0.5;
+                                    Location entityloc = new Location(world, finalXrandom1, world.getHighestBlockAt(finalXrandom1, finalZrandom1).getY() + count[0], finalZrandom1);
+                                    world.spawnParticle(Particle.SMOKE_LARGE, entityloc, 10, 0, 0, 0, 0.1);
+                                }
+                            }
+                        }, 5, 2);
 
 
-                    Bukkit.getScheduler().runTaskLater(instance, new Runnable() {
-                        @Override
-                        public void run() {
-                            int i = 0;
-                            int xrandom = (int) Math.floor(Math.random() * (xmax - xmin + 1) + xmin);
-                            int zrandom = (int) Math.floor(Math.random() * (zmax - zmin + 1) + zmin);
-                            int locy = world.getHighestBlockAt(finalXrandom1, finalZrandom1).getY() + 1;
-                            Location loc = new Location(world, finalXrandom1, locy, finalZrandom1);
-                            if (world.getHighestBlockAt(finalXrandom1, finalZrandom1).getBlockData().getMaterial().equals(Material.WATER) || world.getHighestBlockAt(finalXrandom1, finalZrandom1).getBlockData().getMaterial().equals(Material.AZALEA_LEAVES) || world.getHighestBlockAt(finalXrandom1, finalZrandom1).getY() >= 115) {
+                        Bukkit.getScheduler().runTaskLater(instance, new Runnable() {
+                            @Override
+                            public void run() {
+                                int i = 0;
+                                int xrandom = (int) Math.floor(Math.random() * (xmax - xmin + 1) + xmin);
+                                int zrandom = (int) Math.floor(Math.random() * (zmax - zmin + 1) + zmin);
+                                int locy = world.getHighestBlockAt(finalXrandom1, finalZrandom1).getY() + 1;
+                                Location loc = new Location(world, finalXrandom1, locy, finalZrandom1);
+                                if (world.getHighestBlockAt(finalXrandom1, finalZrandom1).getBlockData().getMaterial().equals(Material.WATER) || world.getHighestBlockAt(finalXrandom1, finalZrandom1).getBlockData().getMaterial().equals(Material.AZALEA_LEAVES) || world.getHighestBlockAt(finalXrandom1, finalZrandom1).getY() >= 115) {
 //                    while (locy >= 120 || spawnloc.getBlock().getBlockData().getMaterial().equals(Material.AIR)){
 //                        xrandom = (int)Math.floor(Math.random()*(xmax-xmin+1)+xmin);
 //                        zrandom = (int)Math.floor(Math.random()*(zmax-zmin+1)+zmin);
@@ -433,40 +444,40 @@ public class Main extends JavaPlugin {
 //                        loc = new Location(world, xrandom, locy, zrandom);
 //                        locy = world.getHighestBlockAt(xrandom, zrandom).getY() + 1;
 //                    }
-                            }else{
-                                Zombie mob = (Zombie) world.spawnEntity(loc, EntityType.ZOMBIE);
-                                PersistentDataContainer levels = mob.getPersistentDataContainer();
-                                levels.set(namespacedKey, PersistentDataType.STRING, "1");
-                                AttributeInstance health = mob.getAttribute(Attribute.GENERIC_MAX_HEALTH);
-                                health.setBaseValue(40.0D);
-                                mob.setRemoveWhenFarAway(false);
-                                mob.setHealth(40.0D);
-                                AttributeInstance strength = mob.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE);
-                                mob.setCustomNameVisible(true);
-                                strength.setBaseValue(10.0D);
-                                int healthrounded = (int) Math.round(mob.getHealth());
-                                int maxhealthrounded = (int) Math.round(mob.getMaxHealth());
-                                mob.setCustomName("" + ChatColor.RED + ChatColor.BOLD + healthrounded + "/" + maxhealthrounded);
-                                mob.setPersistent(true);
-                                mob.getEquipment().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
-                                mob.getEquipment().setBoots(new ItemStack(Material.LEATHER_BOOTS));
-                                world.spawnParticle(Particle.DRAGON_BREATH, mob.getLocation(), 50, 0, 0, 0, 0.05);
+                                } else {
+                                    Zombie mob = (Zombie) world.spawnEntity(loc, EntityType.ZOMBIE);
+                                    PersistentDataContainer levels = mob.getPersistentDataContainer();
+                                    levels.set(namespacedKey, PersistentDataType.STRING, "1");
+                                    AttributeInstance health = mob.getAttribute(Attribute.GENERIC_MAX_HEALTH);
+                                    health.setBaseValue(40.0D);
+                                    mob.setRemoveWhenFarAway(false);
+                                    mob.setHealth(40.0D);
+                                    AttributeInstance strength = mob.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE);
+                                    mob.setCustomNameVisible(true);
+                                    strength.setBaseValue(10.0D);
+                                    int healthrounded = (int) Math.round(mob.getHealth());
+                                    int maxhealthrounded = (int) Math.round(mob.getMaxHealth());
+                                    mob.setCustomName("" + ChatColor.RED + ChatColor.BOLD + healthrounded + "/" + maxhealthrounded);
+                                    mob.setPersistent(true);
+                                    mob.getEquipment().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
+                                    mob.getEquipment().setBoots(new ItemStack(Material.LEATHER_BOOTS));
+                                    world.spawnParticle(Particle.DRAGON_BREATH, mob.getLocation(), 50, 0, 0, 0, 0.05);
+                                }
                             }
-                        }
-                    }, 27);
+                        }, 27);
+                    }
                 }
-            }
 
-        }
-    }, 100, 100);
+            }
+        }, 100, 100);
         Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new Runnable() {
             @Override
             public void run() {
                 World world = Bukkit.getServer().getWorld("world");
                 List<Player> players = world.getPlayers();
 
-                for (Player p : players){
-                    if(p.getLocation().getY() >= 175){
+                for (Player p : players) {
+                    if (p.getLocation().getY() >= 175) {
                         p.sendTitle("" + ChatColor.BOLD + ChatColor.RED + "Low Oxygen", "");
                         p.damage(2);
                     }
@@ -475,7 +486,6 @@ public class Main extends JavaPlugin {
             }
 
         }, 20, 20);
-
 
 
     }

@@ -67,7 +67,7 @@ public class JoinEvent implements Listener {
         PacketEvents.getAPI().getPlayerManager().sendPacket(p, packet);
 
         PacketEvents.getAPI().getPlayerManager().sendPacket(p, packet1);
-        p.sendTitle("" + ChatColor.DARK_GREEN + ChatColor.BOLD + "The Snowy RPG", "" + ChatColor.GREEN + ChatColor.BOLD + "Welcome!", 75, 100, 50);
+        p.sendTitle("" + ChatColor.DARK_GREEN + ChatColor.BOLD + "Septicraft", "" + ChatColor.GREEN + ChatColor.BOLD + "Welcome!", 75, 100, 50);
         Bukkit.getScheduler().runTaskLater(instance, new Runnable() {
             @Override
             public void run() {

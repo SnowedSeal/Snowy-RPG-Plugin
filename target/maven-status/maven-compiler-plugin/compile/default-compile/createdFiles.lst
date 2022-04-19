@@ -50,6 +50,7 @@ me\loudsnow\mcplug\Main$2.class
 me\loudsnow\mcplug\weapons\flameblade\FlamebladeListener$1.class
 me\loudsnow\mcplug\Main.class
 me\loudsnow\mcplug\mobs\npcs\HorseListener$2.class
+me\loudsnow\mcplug\system\mongodb\MongoDBTest.class
 me\loudsnow\mcplug\accessories\glowingpendant\GlowingPendantCommand.class
 me\loudsnow\mcplug\system\discord\DiscordMessage.class
 me\loudsnow\mcplug\weapons\forestsword\ForestSwordCommand.class
