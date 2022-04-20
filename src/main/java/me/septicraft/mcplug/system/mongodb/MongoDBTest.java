@@ -24,7 +24,7 @@ public class MongoDBTest implements CommandExecutor {
         //mongoCollection.updateOne(Filters.eq("_id", p.getUniqueId().toString()), Updates.set("_id", p.getUniqueId().toString()));
 //        String value  = mongoCollection.find().projection(Projections.include(p.getUniqueId().toString())).first().getString("name");
         DBObject query = new BasicDBObject("_id", p.getUniqueId().toString());
-        DBCursor cursor = Main.mongoCollection.find(query);
+        //DBCursor cursor = Main.mongoCollection.find(query);
         //p.sendMessage(value);
         //DBCursor result = mongoCollection.find(query);
         //if (query.has){
