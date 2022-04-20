@@ -40,6 +40,7 @@ me\loudsnow\mcplug\weapons\flameblade\FlamebladeCommand.class
 me\loudsnow\mcplug\mobs\npcs\HorseListener.class
 me\loudsnow\mcplug\armor\windstep\WindstepCommand.class
 me\loudsnow\mcplug\mobs\SpawnQueen.class
+me\loudsnow\mcplug\system\discord\DiscordMessage$1.class
 me\loudsnow\mcplug\system\TrainingDummy.class
 me\loudsnow\mcplug\mobs\Lvl1Mob$1.class
 me\loudsnow\mcplug\mobs\npcs\BankerDeposit.class

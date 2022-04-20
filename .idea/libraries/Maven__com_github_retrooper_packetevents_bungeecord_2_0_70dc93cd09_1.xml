@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.retrooper.packetevents:bungeecord:2.0-70dc93cd09-1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/retrooper/packetevents/bungeecord/2.0-70dc93cd09-1/bungeecord-2.0-70dc93cd09-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/retrooper/packetevents/bungeecord/2.0-70dc93cd09-1/bungeecord-2.0-70dc93cd09-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/retrooper/packetevents/bungeecord/2.0-70dc93cd09-1/bungeecord-2.0-70dc93cd09-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
