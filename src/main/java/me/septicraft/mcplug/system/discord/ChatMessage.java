@@ -1,6 +1,8 @@
 package me.septicraft.mcplug.system.discord;
 
+import com.google.gson.JsonObject;
 import me.septicraft.mcplug.Main;
+import me.septicraft.mcplug.system.mongodb.MongoDBUtil;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.TextChannel;
 import org.bukkit.ChatColor;
@@ -21,6 +23,11 @@ public class ChatMessage implements Listener {
     public void onPlayerChat(AsyncPlayerChatEvent ev){
         Player p = ev.getPlayer();
         if (Main.bank1.containsKey(p.getUniqueId().toString())) {
+            p.sendMessage(ChatColor.RED + "This is currently disabled. Sorry!");
+            Main.bank1.remove(p.getUniqueId().toString());
+            ev.setCancelled(true);
+/*
+
             int amount = -1;
             boolean stop = false;
             ev.setCancelled(true);
@@ -37,12 +44,11 @@ public class ChatMessage implements Listener {
                     Main.bank1.remove(p.getUniqueId().toString());
                 }
             }
-            NamespacedKey namespacedKey = new NamespacedKey(Main.instance, "balance");
-            PersistentDataContainer pbalance = p.getPersistentDataContainer();
-            int num = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
+            JsonObject num1 = MongoDBUtil.readData("_id", p.getUniqueId());
+            int num = Integer.parseInt(num1.get("balance").toString());
             Main.bank1.remove(p.getUniqueId().toString());
             if (amount != 0 && num >= amount) {
-                pbalance.set(namespacedKey, PersistentDataType.INTEGER, num - amount);
+                MongoDBUtil.updateData("_id", p, "balance", num + amount);
                 ItemStack sunflower = new ItemStack(Material.SUNFLOWER, amount);
                 p.getInventory().addItem(sunflower);
                 p.sendMessage(ChatColor.GREEN + "Done!");
@@ -51,6 +57,7 @@ public class ChatMessage implements Listener {
                 p.sendMessage(ChatColor.RED + "You don't have enough!");
                 Main.bank1.remove(p.getUniqueId().toString());
             }
+*/
 
         }
         if (Main.bugBoolean.containsKey(p.getUniqueId().toString())){

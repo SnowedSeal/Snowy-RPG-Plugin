@@ -1,6 +1,8 @@
 package me.septicraft.mcplug.mobs.npcs;
 
+import com.google.gson.JsonObject;
 import me.septicraft.mcplug.Main;
+import me.septicraft.mcplug.system.mongodb.MongoDBUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -29,96 +31,80 @@ public class BankerDeposit implements Listener {
             if (Objects.requireNonNull(e.getCurrentItem()).getItemMeta() != null) {
                 e.getCurrentItem().getItemMeta().getDisplayName();
                 if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§7§lDeposit 16 Coins")) {
-                    if (Main.bank.containsKey(player.getUniqueId().toString())) {
-                        int num1 = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
-                        String playerKey = player.getUniqueId().toString();
-                        if (player.getInventory().containsAtLeast(new ItemStack(Material.SUNFLOWER), 16)) {
-                            pbalance.set(namespacedKey, PersistentDataType.INTEGER, num1 + 16);
-                            player.getInventory().removeItem(new ItemStack[]{new ItemStack(Material.SUNFLOWER, 16)});
-                            num1 = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
-                            ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
-                            ItemMeta meta7 = balance.getItemMeta();
-                            meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num1);
-                            ArrayList<String> lore = new ArrayList();
-                            lore.add(" ");
-                            lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "me to choose a specific amount to deposit!");
-                            meta7.setLore(lore);
-                            balance.setItemMeta(meta7);
-                            player.getOpenInventory().setItem(4, balance);
-                        } else {
-                            player.sendMessage(ChatColor.RED + "You don't have enough in your inventory!");
-                        }
+                    JsonObject num1 = MongoDBUtil.readData("_id", player.getUniqueId());
+                    int num = Integer.parseInt(num1.get("balance").toString());
+                    if (player.getInventory().containsAtLeast(new ItemStack(Material.SUNFLOWER), 16)) {
+                        MongoDBUtil.updateData("_id", player, "balance", num + 16);
+                        num = num + 16;
+                        player.getInventory().removeItem(new ItemStack[]{new ItemStack(Material.SUNFLOWER, 16)});
+                        ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
+                        ItemMeta meta7 = balance.getItemMeta();
+                        meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
+                        ArrayList<String> lore = new ArrayList();
+                        lore.add(" ");
+                        //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to deposit!");
+                        meta7.setLore(lore);
+                        balance.setItemMeta(meta7);
+                        player.getOpenInventory().setItem(4, balance);
                     } else {
-                        player.sendMessage(ChatColor.RED + "ERROR: CANNOT FIND BANK ACCOUNT; PLEASE REPORT THIS");
+                        player.sendMessage(ChatColor.RED + "You don't have enough in your inventory!");
                     }
                 } else if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§7§lDeposit 1 Coin")) {
-                    if (Main.bank.containsKey(player.getUniqueId().toString())) {
-                        String playerKey = player.getUniqueId().toString();
-                        int num1 = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
-                        if (player.getInventory().containsAtLeast(new ItemStack(Material.SUNFLOWER), 1)) {
-                            pbalance.set(namespacedKey, PersistentDataType.INTEGER, num1 + 1);
-                            player.getInventory().removeItem(new ItemStack[]{new ItemStack(Material.SUNFLOWER, 1)});
-                            num1 = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
-                            ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
-                            ItemMeta meta7 = balance.getItemMeta();
-                            meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num1);
-                            ArrayList<String> lore = new ArrayList();
-                    lore.add(" ");
-                    lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "me to choose a specific amount to deposit!");
-                    meta7.setLore(lore);
-                            balance.setItemMeta(meta7);
-                            player.getOpenInventory().setItem(4, balance);
-                        } else {
-                            player.sendMessage(ChatColor.RED + "You don't have enough in your inventory!");
-                        }
+                    JsonObject num1 = MongoDBUtil.readData("_id", player.getUniqueId());
+                    int num = Integer.parseInt(num1.get("balance").toString());
+                    if (player.getInventory().containsAtLeast(new ItemStack(Material.SUNFLOWER), 1)) {
+                        MongoDBUtil.updateData("_id", player, "balance", num + 1);
+                        num = num + 1;
+                        player.getInventory().removeItem(new ItemStack[]{new ItemStack(Material.SUNFLOWER, 1)});
+                        ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
+                        ItemMeta meta7 = balance.getItemMeta();
+                        meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
+                        ArrayList<String> lore = new ArrayList();
+                        lore.add(" ");
+                        //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to deposit!");
+                        meta7.setLore(lore);
+                        balance.setItemMeta(meta7);
+                        player.getOpenInventory().setItem(4, balance);
                     } else {
-                        player.sendMessage(ChatColor.RED + "ERROR: CANNOT FIND BANK ACCOUNT; PLEASE REPORT THIS");
+                        player.sendMessage(ChatColor.RED + "You don't have enough in your inventory!");
                     }
                 } else if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§7§lDeposit 32 Coins")) {
-                    if (Main.bank.containsKey(player.getUniqueId().toString())) {
-                        String playerKey = player.getUniqueId().toString();
-                        int num1 = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
-                        if (player.getInventory().containsAtLeast(new ItemStack(Material.SUNFLOWER), 32)) {
-                            pbalance.set(namespacedKey, PersistentDataType.INTEGER, num1 + 32);
-                            player.getInventory().removeItem(new ItemStack[]{new ItemStack(Material.SUNFLOWER, 32)});
-                            num1 = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
-                            ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
-                            ItemMeta meta7 = balance.getItemMeta();
-                            meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num1);
-                            ArrayList<String> lore = new ArrayList();
-                            lore.add(" ");
-                            lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "me to choose a specific amount to deposit!");
-                            meta7.setLore(lore);
-                            balance.setItemMeta(meta7);
-                            player.getOpenInventory().setItem(4, balance);
-                        } else {
-                            player.sendMessage(ChatColor.RED + "You don't have enough in your inventory!");
-                        }
+                    JsonObject num1 = MongoDBUtil.readData("_id", player.getUniqueId());
+                    int num = Integer.parseInt(num1.get("balance").toString());
+                    if (player.getInventory().containsAtLeast(new ItemStack(Material.SUNFLOWER), 32)) {
+                        MongoDBUtil.updateData("_id", player, "balance", num + 32);
+                        num = num + 32;
+                        player.getInventory().removeItem(new ItemStack[]{new ItemStack(Material.SUNFLOWER, 32)});
+                        ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
+                        ItemMeta meta7 = balance.getItemMeta();
+                        meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
+                        ArrayList<String> lore = new ArrayList();
+                        lore.add(" ");
+                        //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to deposit!");
+                        meta7.setLore(lore);
+                        balance.setItemMeta(meta7);
+                        player.getOpenInventory().setItem(4, balance);
                     } else {
-                        player.sendMessage(ChatColor.RED + "ERROR: CANNOT FIND BANK ACCOUNT; PLEASE REPORT THIS");
+                        player.sendMessage(ChatColor.RED + "You don't have enough in your inventory!");
                     }
                 } else if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§7§lDeposit 64 Coins")) {
-                    if (Main.bank.containsKey(player.getUniqueId().toString())) {
-                        String playerKey = player.getUniqueId().toString();
-                        int num1 = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
-                        if (player.getInventory().containsAtLeast(new ItemStack(Material.SUNFLOWER), 64)) {
-                            pbalance.set(namespacedKey, PersistentDataType.INTEGER, num1 + 64);
-                            num1 = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
-                            player.getInventory().removeItem(new ItemStack[]{new ItemStack(Material.SUNFLOWER, 64)});
-                            ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
-                            ItemMeta meta7 = balance.getItemMeta();
-                            meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num1);
-                            ArrayList<String> lore = new ArrayList();
-                            lore.add(" ");
-                            lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "me to choose a specific amount to deposit!");
-                            meta7.setLore(lore);
-                            balance.setItemMeta(meta7);
-                            player.getOpenInventory().setItem(4, balance);
-                        } else {
-                            player.sendMessage(ChatColor.RED + "You don't have enough in your inventory!");
-                        }
+                    JsonObject num1 = MongoDBUtil.readData("_id", player.getUniqueId());
+                    int num = Integer.parseInt(num1.get("balance").toString());
+                    if (player.getInventory().containsAtLeast(new ItemStack(Material.SUNFLOWER), 64)) {
+                        MongoDBUtil.updateData("_id", player, "balance", num + 64);
+                        player.getInventory().removeItem(new ItemStack[]{new ItemStack(Material.SUNFLOWER, 64)});
+                        ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
+                        ItemMeta meta7 = balance.getItemMeta();
+                        num = num + 64;
+                        meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
+                        ArrayList<String> lore = new ArrayList();
+                        lore.add(" ");
+                        //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to deposit!");
+                        meta7.setLore(lore);
+                        balance.setItemMeta(meta7);
+                        player.getOpenInventory().setItem(4, balance);
                     } else {
-                        player.sendMessage(ChatColor.RED + "ERROR: CANNOT FIND BANK ACCOUNT; PLEASE REPORT THIS");
+                        player.sendMessage(ChatColor.RED + "You don't have enough in your inventory!");
                     }
                 } else if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§cBack")) {
                     Player p = (Player) e.getWhoClicked();
@@ -136,21 +122,22 @@ public class BankerDeposit implements Listener {
                     ItemStack voids = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
                     ItemMeta meta5 = voids.getItemMeta();
                     meta5.setDisplayName("");
-                    int num1 = 0;
-                    if (pbalance.get(namespacedKey, PersistentDataType.INTEGER) != null) {
+                    //int num1 = 0;
+                    /*if (pbalance.get(namespacedKey, PersistentDataType.INTEGER) != null) {
                         num1 = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
                     } else {
                         p.sendMessage(ChatColor.RED + "There was an error when finding you're balance! Please report this!");
                         p.closeInventory();
-                    }
+                    }*/
                     ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
 //                    pbalance.set(namespacedKey, PersistentDataType.INTEGER, 1);
-
+                    JsonObject num1 = MongoDBUtil.readData("_id", player.getUniqueId());
+                    int num = Integer.parseInt(num1.get("balance").toString());
                     ItemMeta meta7 = balance.getItemMeta();
-                    meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num1);
+                    meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num);
                     ArrayList<String> lore = new ArrayList();
                     lore.add(" ");
-                    lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "me to choose a specific amount to deposit!");
+                    //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to deposit!");
                     meta7.setLore(lore);
                     balance.setItemMeta(meta7);
                     inv.setItem(0, voids);
@@ -165,10 +152,10 @@ public class BankerDeposit implements Listener {
 
                     p.openInventory(inv);
 
-                } else if (e.getCurrentItem().getItemMeta().getDisplayName().contains("" + ChatColor.GOLD + ChatColor.BOLD + "Balance:")){
+                /*} else if (e.getCurrentItem().getItemMeta().getDisplayName().contains("" + ChatColor.GOLD + ChatColor.BOLD + "Balance:")){
                     player.closeInventory();
-                    player.sendMessage(ChatColor.GREEN + "How many coins would you like to deposit? [Send Chat]");
-                    Main.bank1.put(player.getUniqueId().toString(), true);
+                    player.sendMessage(ChatColor.GREEN + "How many coins would you like to change? Use negative to withdraw. [Send Chat]");
+                    Main.bank1.put(player.getUniqueId().toString(), true);*/
                 }
             }
         }

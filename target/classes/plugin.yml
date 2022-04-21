@@ -1,7 +1,7 @@
 name: SepticraftBackend
 version: 2.6
 author: Loudbook
-main: me.loudsnow.mcplug.Main
+main: me.septicraft.mcplug.Main
 description: Septicraft Backend
 api-version: 1.18
 load: POSTWORLD

@@ -1,6 +1,8 @@
 package me.septicraft.mcplug.mobs.npcs;
 
+import com.google.gson.JsonObject;
 import me.septicraft.mcplug.Main;
+import me.septicraft.mcplug.system.mongodb.MongoDBUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -14,6 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -22,18 +25,18 @@ public class BankerWithdraw implements Listener {
     @EventHandler
     public void onPlayerClickInventory(InventoryClickEvent e) {
         Player player = (Player) e.getWhoClicked();
-        NamespacedKey namespacedKey = new NamespacedKey(Main.instance, "balance");
-        PersistentDataContainer pbalance = player.getPersistentDataContainer();
+/*        NamespacedKey namespacedKey = new NamespacedKey(Main.instance, "balance");
+        PersistentDataContainer pbalance = player.getPersistentDataContainer();*/
         if (e.getView().getTitle().equalsIgnoreCase("§6§lBank")) {
             if (Objects.requireNonNull(e.getCurrentItem()).getItemMeta() != null) {
                 e.getCurrentItem().getItemMeta().getDisplayName();
                 if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§7§lWithdraw 16 Coins")) {
                     e.setCancelled(true);
                     if (Main.bank.containsKey(player.getUniqueId().toString())) {
-                        String playerKey = player.getUniqueId().toString();
-                        int num = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
+                        JsonObject num1 = MongoDBUtil.readData("_id", player.getUniqueId());
+                        int num = Integer.parseInt(num1.get("balance").toString());
                         if (num >= 16) {
-                            int i = 0;
+                            int i = 2;
 /*                            for(ItemStack is : player.getInventory().getContents()) {
                                 Inventory inv = player.getInventory();
                                 if (is == null){
@@ -41,24 +44,19 @@ public class BankerWithdraw implements Listener {
                                     i++;
                                 }
                             }*/
-                            player.sendMessage(String.valueOf(i));
-                            if (i > 1) {
-                                pbalance.set(namespacedKey, PersistentDataType.INTEGER, num - 16);
-                                num = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
-                                ItemStack sunflower = new ItemStack(Material.SUNFLOWER, 16);
-                                player.getInventory().addItem(sunflower);
-                                ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
-                                ItemMeta meta7 = balance.getItemMeta();
-                                meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
-                                ArrayList<String> lore = new ArrayList();
-                                lore.add(" ");
-                                lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + " to choose a specific amount to withdraw!");
-                                meta7.setLore(lore);
-                                balance.setItemMeta(meta7);
-                                player.getOpenInventory().setItem(4, balance);
-                            } else {
-                                player.sendMessage(ChatColor.GREEN + "You don't have enough space! Please make sure you have at least 1 inventory slot open!");
-                            }
+                            MongoDBUtil.updateData("_id", player, "balance", num - 16);
+                            num = num - 16;
+                            ItemStack sunflower = new ItemStack(Material.SUNFLOWER, 16);
+                            player.getInventory().addItem(sunflower);
+                            ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
+                            ItemMeta meta7 = balance.getItemMeta();
+                            meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
+                            ArrayList<String> lore = new ArrayList();
+                            lore.add(" ");
+                            //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to withdraw!");
+                            meta7.setLore(lore);
+                            balance.setItemMeta(meta7);
+                            player.getOpenInventory().setItem(4, balance);
                         } else {
                             player.sendMessage(ChatColor.RED + "You don't have enough in your account!");
                         }
@@ -69,7 +67,8 @@ public class BankerWithdraw implements Listener {
                     e.setCancelled(true);
                     if (Main.bank.containsKey(player.getUniqueId().toString())) {
                         String playerKey = player.getUniqueId().toString();
-                        int num = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
+                        JsonObject num1 = MongoDBUtil.readData("_id", player.getUniqueId());
+                        int num = Integer.parseInt(num1.get("balance").toString());
                         if (num >= 1) {
                             int i = 0;
                             for (ItemStack itemStack : player.getInventory()) {
@@ -77,9 +76,9 @@ public class BankerWithdraw implements Listener {
                                     i++;
                                 }
                             }
-                            if (i >= 1) {
-                                pbalance.set(namespacedKey, PersistentDataType.INTEGER, num - 1);
-                                num = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
+                            if (i >= 0) {
+                                MongoDBUtil.updateData("_id", player, "balance", num - 1);
+                                num = num - 1;
                                 ItemStack sunflower = new ItemStack(Material.SUNFLOWER);
                                 player.getInventory().addItem(sunflower);
                                 ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
@@ -87,7 +86,7 @@ public class BankerWithdraw implements Listener {
                                 meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num);
                                 ArrayList<String> lore = new ArrayList();
                                 lore.add(" ");
-                                lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + " to choose a specific amount to withdraw!");
+                                //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to withdraw!");
                                 meta7.setLore(lore);
                                 balance.setItemMeta(meta7);
                                 player.getOpenInventory().setItem(4, balance);
@@ -103,8 +102,8 @@ public class BankerWithdraw implements Listener {
                 } else if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§7§lWithdraw 32 Coins")) {
                     e.setCancelled(true);
                     if (Main.bank.containsKey(player.getUniqueId().toString())) {
-                        String playerKey = player.getUniqueId().toString();
-                        int num = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
+                        JsonObject num1 = MongoDBUtil.readData("_id", player.getUniqueId());
+                        int num = Integer.parseInt(num1.get("balance").toString());
                         if (num >= 32) {
                             int i = 0;
                             for (ItemStack itemStack : player.getInventory()) {
@@ -112,9 +111,9 @@ public class BankerWithdraw implements Listener {
                                     i++;
                                 }
                             }
-                            if (i >= 1) {
-                                pbalance.set(namespacedKey, PersistentDataType.INTEGER, num - 32);
-                                num = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
+                            if (i >= 0) {
+                                MongoDBUtil.updateData("_id", player, "balance", num - 32);
+                                num = num - 32;
                                 ItemStack sunflower = new ItemStack(Material.SUNFLOWER, 32);
                                 player.getInventory().addItem(sunflower);
                                 ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
@@ -122,7 +121,7 @@ public class BankerWithdraw implements Listener {
                                 meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num);
                                 ArrayList<String> lore = new ArrayList();
                                 lore.add(" ");
-                                lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + " to choose a specific amount to withdraw!");
+                                //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to withdraw!");
                                 meta7.setLore(lore);
                                 balance.setItemMeta(meta7);
                                 player.getOpenInventory().setItem(4, balance);
@@ -138,8 +137,8 @@ public class BankerWithdraw implements Listener {
                 } else if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§7§lWithdraw 64 Coins")) {
                     e.setCancelled(true);
                     if (Main.bank.containsKey(player.getUniqueId().toString())) {
-                        String playerKey = player.getUniqueId().toString();
-                        int num = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
+                        JsonObject num1 = MongoDBUtil.readData("_id", player.getUniqueId());
+                        int num = Integer.parseInt(num1.get("balance").toString());
                         if (num >= 64) {
                             int i = 0;
                             for (ItemStack itemStack : player.getInventory()) {
@@ -147,9 +146,9 @@ public class BankerWithdraw implements Listener {
                                     i++;
                                 }
                             }
-                            if (i >= 1) {
-                                pbalance.set(namespacedKey, PersistentDataType.INTEGER, num - 64);
-                                num = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
+                            if (i >= 0) {
+                                MongoDBUtil.updateData("_id", player, "balance", num - 64);
+                                num = num - 64;
                                 ItemStack sunflower = new ItemStack(Material.SUNFLOWER, 64);
                                 player.getInventory().addItem(sunflower);
                                 ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
@@ -157,7 +156,7 @@ public class BankerWithdraw implements Listener {
                                 meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num);
                                 ArrayList<String> lore = new ArrayList();
                                 lore.add(" ");
-                                lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + " to choose a specific amount to withdraw!");
+                                //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to withdraw!");
                                 meta7.setLore(lore);
                                 balance.setItemMeta(meta7);
                                 player.getOpenInventory().setItem(4, balance);
@@ -187,12 +186,12 @@ public class BankerWithdraw implements Listener {
                     ItemMeta meta5 = voids.getItemMeta();
                     meta5.setDisplayName("");
                     int num1 = 0;
-                    if (pbalance.get(namespacedKey, PersistentDataType.INTEGER) != null) {
+ /*                   if (pbalance.get(namespacedKey, PersistentDataType.INTEGER) != null) {
                         num1 = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
                     } else {
                         p.sendMessage(ChatColor.RED + "There was an error when finding you're balance! Please report this!");
                         p.closeInventory();
-                    }
+                    }*/
                     ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
 //                    pbalance.set(namespacedKey, PersistentDataType.INTEGER, 1);
 
@@ -200,7 +199,7 @@ public class BankerWithdraw implements Listener {
                     meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num1);
                     ArrayList<String> lore = new ArrayList();
                     lore.add(" ");
-                    lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + " to choose a specific amount to withdraw!");
+                    //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to withdraw!");
                     meta7.setLore(lore);
                     balance.setItemMeta(meta7);
                     inv.setItem(0, voids);
@@ -215,6 +214,10 @@ public class BankerWithdraw implements Listener {
 
                     p.openInventory(inv);
 
+                /*} else if (e.getCurrentItem().getItemMeta().getDisplayName().contains("" + ChatColor.GOLD + ChatColor.BOLD + "Balance:")){
+                    player.closeInventory();
+                    player.sendMessage(ChatColor.GREEN + "How many coins would you like to change? Use negative to withdraw. [Send Chat]");
+                    Main.bank1.put(player.getUniqueId().toString(), true);*/
                 }
             }
         }

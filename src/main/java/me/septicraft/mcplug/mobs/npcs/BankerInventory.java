@@ -1,7 +1,9 @@
 package me.septicraft.mcplug.mobs.npcs;
 
 
+import com.google.gson.JsonObject;
 import me.septicraft.mcplug.Main;
+import me.septicraft.mcplug.system.mongodb.MongoDBUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -34,7 +36,8 @@ public class BankerInventory implements Listener{
             e.setCancelled(true);
             NamespacedKey namespacedKey = new NamespacedKey(Main.instance, "balance");
             PersistentDataContainer pbalance = p.getPersistentDataContainer();
-            int num = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
+            JsonObject num1 = MongoDBUtil.readData("_id", p.getUniqueId());
+            int num = Integer.parseInt(num1.get("balance").toString());
             if (e.getCurrentItem().getItemMeta() != null){
                 ItemStack back = new ItemStack(Material.ARROW);
                 ItemMeta backmeta = back.getItemMeta();
@@ -70,7 +73,7 @@ public class BankerInventory implements Listener{
                         meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
                         ArrayList<String> lore = new ArrayList();
                         lore.add(" ");
-                        lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "me to choose a specific amount to withdraw!");
+                        //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + " to choose a specific amount to withdraw!");
                         meta7.setLore(lore);
                         balance.setItemMeta(meta7);
 
@@ -122,6 +125,11 @@ public class BankerInventory implements Listener{
                         ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
                         ItemMeta meta7 = balance.getItemMeta();
                         meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
+                        ArrayList<String> lore = new ArrayList();
+                        lore.add(" ");
+                        //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to withdraw!");
+                        meta7.setLore(lore);
+
                         balance.setItemMeta(meta7);
 
                         ItemStack with3 = new ItemStack(Material.HOPPER_MINECART);

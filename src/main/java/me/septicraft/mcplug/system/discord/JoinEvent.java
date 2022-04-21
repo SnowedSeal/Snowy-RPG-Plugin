@@ -7,12 +7,16 @@ import com.github.retrooper.packetevents.protocol.entity.type.EntityTypes;
 import com.github.retrooper.packetevents.util.Vector3d;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerEntityMetadata;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerSpawnEntity;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
 import me.septicraft.mcplug.Main;
+import me.septicraft.mcplug.system.mongodb.MongoDBUtil;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
+import org.bson.Document;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -27,10 +31,26 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
 
+import static me.septicraft.mcplug.Main.mongoCollection;
+
 public class JoinEvent implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
+        if (MongoDBUtil.readData("_id", p.getUniqueId()) == null){
+            SimpleDateFormat formatter= new SimpleDateFormat("MM-dd-yyyy 'at' HH:mm:ss z");
+            Date date = new Date(System.currentTimeMillis());
+            Document document = new Document();
+            document.append("_id", p.getUniqueId().toString());
+            document.append("joined", formatter.format(date));
+            document.append("name", p.getName());
+            document.append("balance", 0);
+            mongoCollection.insertOne(document);
+            p.sendMessage(ChatColor.GREEN + "Welcome to the server! Your information has been added to our database.");
+        }
+
+        mongoCollection.updateOne(Filters.eq("_id", p.getUniqueId().toString()), Updates.set("name", p.getName()));
+
         e.setJoinMessage("" + ChatColor.GREEN + ChatColor.BOLD + p.getName() + " joined the server!");
         TextChannel channel = Main.jda.getGuildById("945036462141890601").getTextChannelById("946929911095001118");
         EmbedBuilder eb = new EmbedBuilder();

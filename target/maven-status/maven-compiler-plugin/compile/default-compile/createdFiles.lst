@@ -88,6 +88,7 @@ me\septicraft\mcplug\mobs\Whistle$1.class
 me\septicraft\mcplug\mobs\npcs\BankerSetup.class
 me\septicraft\mcplug\weapons\flameblade\FlamebladeListener$2.class
 me\septicraft\mcplug\mobs\mobdeaths\lvl1death$1$2.class
+me\septicraft\mcplug\system\mongodb\MongoDBUtil.class
 me\septicraft\mcplug\mobs\npcs\NPC7.class
 me\septicraft\mcplug\system\discord\JoinEvent$1.class
 me\septicraft\mcplug\system\report\ReportTabComplete.class
