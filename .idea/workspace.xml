@@ -10,8 +10,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a66c3e81-1ad4-4a0d-acfd-8fe6b52f1822" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/DeathEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/loudsnow/mcplug/DeathEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/aetherarmor/AetherArmorListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Septicraft.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Septicraft.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_2_0_70dc93cd09_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_2_0_86bffa503c_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_api_2_0_70dc93cd09_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_api_2_0_86bffa503c_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_bungeecord_2_0_70dc93cd09_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_bungeecord_2_0_86bffa503c_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_netty_common_2_0_70dc93cd09_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_netty_common_2_0_86bffa503c_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_spigot_2_0_70dc93cd09_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_spigot_2_0_86bffa503c_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_velocity_2_0_70dc93cd09_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_velocity_2_0_86bffa503c_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_2_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_2_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/rookieglider/RookieGliderListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/rookieglider/RookieGliderListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/windstep/WindstepCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/windstep/WindstepCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/windstep/WindstepListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/windstep/WindstepListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/BankerDeposit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/BankerDeposit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/BankerInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/BankerInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/BankerWithdraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/BankerWithdraw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/NPC2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/NPC2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/discord/DeathEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/discord/DeathEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/discord/SlashCommandInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/discord/SlashCommandInteraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$4$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$4$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$4$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/armor/rookieglider/RookieGliderListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/armor/rookieglider/RookieGliderListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/armor/rookieglider/RookieGliderListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/armor/rookieglider/RookieGliderListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/BankerDeposit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/BankerDeposit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/BankerInventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/BankerInventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/BankerWithdraw.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/BankerWithdraw.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/NPC2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/NPC2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/discord/DeathEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/discord/DeathEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/discord/SlashCommandInteraction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/discord/SlashCommandInteraction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
+    <list id="c29bbf91-0ad1-49b6-b116-581a10c72745" name="Changes by roshan" comment="" />
+    <list id="8e88a7ea-7ba5-4aff-8193-abba708c2e1f" name="Changes by xiaoy" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +74,10 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jrt://C:/Users/Loudbook/.jdks/openjdk-17.0.2!/java.base/java/lang/NoSuchMethodError.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-17.0.2/lib/src.zip!/java.base/java/lang/NoSuchMethodError.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -57,6 +100,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -65,10 +109,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/me/loudsnow/mcplug/shadowleap" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.2137931" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -77,13 +121,53 @@
       <recent name="C:\Users\Loudbook\Desktop\SpigotPlugins\Loud and Snow's SMP\src\me\loudsnow\mcplug" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Loudbook\Desktop\SpigotPlugins\SnowyRPG\Snowy-RPG-Plugin\src\main\java\me\loudsnow\mcplug\npcs" />
       <recent name="C:\Users\Loudbook\Desktop\SpigotPlugins\SnowyRPG\Snowy-RPG-Plugin\src\main\java\me\loudsnow\mcplug" />
       <recent name="C:\Users\Loudbook\Desktop\SpigotPlugins\Loud and Snow's SMP\src" />
       <recent name="C:\Users\Loudbook\Desktop\SpigotPlugins\Loud and Snow's SMP\src\me\loudsnow\mcplug\cancelevents" />
       <recent name="C:\Users\Loudbook\Desktop\SpigotPlugins\Loud and Snow's SMP\src\me\loudsnow\mcplug" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ReadyListener">
+    <configuration name="Discord" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.loudsnow.mcplug.Discord" />
+      <module name="Snowy-RPG-Plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.loudsnow.mcplug.system.discord.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuickStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.loudsnow.mcplug.QuickStart" />
+      <module name="Snowy-RPG-Plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.loudsnow.mcplug.system.discord.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReadyListener" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.loudsnow.mcplug.ReadyListener" />
+      <module name="Snowy-RPG-Plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.loudsnow.mcplug.system.discord.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BuildPlugin" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -107,8 +191,18 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ReadyListener" />
+        <item itemvalue="Application.QuickStart" />
+        <item itemvalue="Application.Discord" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Loudbook\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a66c3e81-1ad4-4a0d-acfd-8fe6b52f1822" name="Changes" comment="" />
@@ -118,6 +212,12 @@
       <updated>1645756554714</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
+    <option featureType="dependencySupport" implementationName="java:net.kyori:adventure-api" />
+    <option featureType="dependencySupport" implementationName="java:org.spigotmc:spigot-api" />
+    <option featureType="dependencySupport" implementationName="java:io.papermc.paper:paper-api" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -129,5 +229,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoSuchMethodError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Snowy-RPG-Plugin" />
+        <module name="Septicraft" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Snowy-RPG-Plugin" target="17" />
+      <module name="Septicraft" target="16" />
+      <module name="Snowy-RPG-Plugin" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>

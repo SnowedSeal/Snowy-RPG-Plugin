@@ -1,3 +1,5 @@
 
-out/artifacts/Loud_and_Snow_s_SMP_jar/SnowySMP.jar
+src/main/resources/config.yml
+src/main/java/me/septicraft/mcplug/BotRestart.java
+target/classes/config.yml
 *.jar

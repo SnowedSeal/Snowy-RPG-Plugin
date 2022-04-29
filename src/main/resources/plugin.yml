@@ -1,33 +1,114 @@
-name: SnowyRPGPlugin
-version: 0.1
-author: LoudbookAndSnowedSeal
-main: me.loudsnow.mcplug.Main
+name: SepticraftBackend
+version: 2.6
+author: Loudbook
+main: me.septicraft.mcplug.Main
+description: Septicraft Backend
 api-version: 1.18
+load: POSTWORLD
+depend: [packetevents]
 commands:
   booktest:
     description: Test for Book
     usage: /booktest
+    perimssion: minecraft.command.ban
   banker:
     description: Get the bank (devs only)
     usage: /banker
+    perimssion: minecraft.command.ban
   getwindstep:
     description: Get Windstep [REMOVE]
     usage: /getwindstep
+    perimssion: minecraft.command.ban
   getmeteorslam:
     description: Get Meteor Slam
     usage: /getmeteorslam
+    perimssion: minecraft.command.ban
+    permission: minecraft.commands.ban
   getshadowleap:
     description: Get Shadowleap
     usage: /getshadowleap
+    perimssion: minecraft.command.ban
   getdesolation:
     description: Get Desolation
     usage: /getdesolation
+    perimssion: minecraft.command.ban
   gettruedesolation:
     description: Get Awakened Desolation
     usage: /gettruedesolation
+    perimssion: minecraft.command.ban
   getstarterdagger:
     description: Get basic dagger
     usage: /getstarterdagger
+    perimssion: minecraft.command.ban
   getstartersword:
     description: Get basic sword
     usage: /getstartersword
+    perimssion: minecraft.command.ban
+  getrookieglider:
+    description: Get Rookie Glider
+    usage: /getrookieglider
+    perimssion: minecraft.command.ban
+  getflameblade:
+    description: Get Flameblade
+    usage: /getflameblade
+    perimssion: minecraft.command.ban
+  getsalvation:
+    description: Get Salvation
+    usage: /getsalvation
+    perimssion: minecraft.command.ban
+  getforestsword:
+    description: Get Forest Sword
+    usage: /getforestsword
+    perimssion: minecraft.command.ban
+  getglowingpendant:
+    description: Get Glowing Pendant
+    usage: /getglowingpendant
+    perimssion: minecraft.command.ban
+  hashmaptest:
+    description: Test Hash Map
+    usage: /hashmashtest
+    perimssion: minecraft.command.ban
+  whistle:
+    description: Summon Horse
+    usage: /whistle
+    perimssion: minecraft.command.ban
+  reloadbot:
+    description: Reload Discord Bot
+    usage: /reloadbot
+    perimssion: minecraft.command.ban
+  report:
+    description: Report Something
+    usage: /report
+    perimssion: minecraft.command.ban
+  clearhash:
+    description: Clear Hash
+    usage: /clearhash
+    perimssion: minecraft.command.ban
+  testspawn:
+    description: Test Spawning Algorithm
+    usage: /testspawn
+    perimssion: minecraft.command.ban
+  spawnqueen:
+    description: Test Queen Spawn
+    usage: /spawnqueen
+    perimssion: minecraft.command.ban
+  boom:
+    description: Boom
+    usage: /boom
+    perimssion: minecraft.command.ban
+  getsnowblade:
+    description: Get Snowblade
+    usage: /getsnowblade
+    perimssion: minecraft.command.ban
+  packettest:
+    description: Packet Test
+    usage: /packettest
+    perimssion: minecraft.command.ban
+  server:
+    description: Change Server
+    usage: /server
+    permission: minecraft.command.ban
+  mongotest:
+    description: MongoDB Test
+    usage: /mongotest
+    permission: minecraft.command.ban
