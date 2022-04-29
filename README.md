@@ -1,8 +1,8 @@
-# Snowy-RPG-Plugin
-A plugin for the Snowy RPG made by Loudbook!
+# Septicraft Backend Plugin
+A plugin for the Septicraft server that handles EVERYTHING!
 ## Build Status:
 
-<img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/workflow/status/Loudbooks/Snowy-RPG-Plugin/Build%20Status/main?label=Build%20Status&style=for-the-badge">
+<img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/workflow/status/Loudbooks/Septicraft-Backend/Build%20Status/main?label=Build%20Status&style=for-the-badge">
 
 ## Community:
 
