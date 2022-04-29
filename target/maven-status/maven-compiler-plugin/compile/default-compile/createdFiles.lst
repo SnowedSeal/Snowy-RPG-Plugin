@@ -1,3 +1,4 @@
+me\septicraft\mcplug\armor\aetherarmor\AetherArmorListener.class
 me\septicraft\mcplug\mobs\npcs\NPC8.class
 me\septicraft\mcplug\system\hashmap\HashMaps.class
 me\septicraft\mcplug\system\report\ReportCommand.class
@@ -20,7 +21,6 @@ me\septicraft\mcplug\armor\shadowleap\ShadowleapListener$1.class
 me\septicraft\mcplug\mobs\npcs\BankerInventory.class
 me\septicraft\mcplug\armor\windstep\WindstepListener.class
 me\septicraft\mcplug\Main$4.class
-me\septicraft\mcplug\armor\windstep\WindstepListener$1.class
 me\septicraft\mcplug\mobs\mobdeaths\lvl1death.class
 me\septicraft\mcplug\mobs\Whistle$2.class
 me\septicraft\mcplug\weapons\meteorslam\MeteorSlamListener.class
@@ -46,6 +46,7 @@ me\septicraft\mcplug\Main$3.class
 me\septicraft\mcplug\weapons\snowblade\SnowBladeListener$1.class
 me\septicraft\mcplug\cancelevents\CancelItemPickup.class
 me\septicraft\mcplug\mobs\npcs\HorseListener$2.class
+me\septicraft\mcplug\system\Util$1.class
 me\septicraft\mcplug\cancelevents\CancelHorseRide.class
 me\septicraft\mcplug\weapons\flameblade\FlamebladeListener.class
 me\septicraft\mcplug\cancelevents\EntityDeath.class
@@ -92,6 +93,7 @@ me\septicraft\mcplug\system\mongodb\MongoDBUtil.class
 me\septicraft\mcplug\mobs\npcs\NPC7.class
 me\septicraft\mcplug\system\discord\JoinEvent$1.class
 me\septicraft\mcplug\system\report\ReportTabComplete.class
+me\septicraft\mcplug\system\Util.class
 me\septicraft\mcplug\mobs\npcs\BankerWithdraw.class
 me\septicraft\mcplug\accessories\glowingpendant\GlowingPendantCommand.class
 me\septicraft\mcplug\weapons\desolation\DesolationAbilityListener.class

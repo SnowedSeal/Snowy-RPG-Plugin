@@ -34,8 +34,6 @@ public class BankerInventory implements Listener{
         if(e.getView().getTitle().equalsIgnoreCase("§6§lBank")) {
             Player p = (Player) e.getWhoClicked();
             e.setCancelled(true);
-            NamespacedKey namespacedKey = new NamespacedKey(Main.instance, "balance");
-            PersistentDataContainer pbalance = p.getPersistentDataContainer();
             JsonObject num1 = MongoDBUtil.readData("_id", p.getUniqueId());
             int num = Integer.parseInt(num1.get("balance").toString());
             if (e.getCurrentItem().getItemMeta() != null){
@@ -72,7 +70,7 @@ public class BankerInventory implements Listener{
                         ItemMeta meta7 = balance.getItemMeta();
                         meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
                         ArrayList<String> lore = new ArrayList();
-                        lore.add(" ");
+                        lore.add("");
                         //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + " to choose a specific amount to withdraw!");
                         meta7.setLore(lore);
                         balance.setItemMeta(meta7);
@@ -126,7 +124,7 @@ public class BankerInventory implements Listener{
                         ItemMeta meta7 = balance.getItemMeta();
                         meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
                         ArrayList<String> lore = new ArrayList();
-                        lore.add(" ");
+                        lore.add("");
                         //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to withdraw!");
                         meta7.setLore(lore);
 

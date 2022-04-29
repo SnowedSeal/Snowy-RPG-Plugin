@@ -11,6 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class WindstepCommand implements CommandExecutor {
     @Override
@@ -22,6 +23,7 @@ public class WindstepCommand implements CommandExecutor {
             meta1.setDisplayName("" + ChatColor.WHITE + ChatColor.BOLD + "Windstep");
             meta1.setColor(Color.WHITE);
             ArrayList<String> lore = new ArrayList();
+            lore.add(ChatColor.DARK_GRAY + UUID.randomUUID().toString());
             lore.add("5 Second Cooldown");
             lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "Use CROUCH to activate warp ability.");
             lore.add("" + ChatColor.YELLOW + "Launches you forward.");

@@ -43,10 +43,11 @@ public class RookieGliderListener implements Listener {
     @EventHandler
     public void onFlightToggle(PlayerToggleFlightEvent e) {
         Player p = e.getPlayer();
+        e.setCancelled(true);
         if (p.getInventory().getChestplate() != null && p.getInventory().getChestplate().getItemMeta().getDisplayName().equals("" + ChatColor.GREEN + ChatColor.BOLD + "Rookie Glider")) {
             if (Main.cd6.containsKey(p.getUniqueId().toString())) {
                 p.sendMessage(ChatColor.RED + "Rookie Glider is on cooldown!");
-                e.setCancelled(true);
+
 
             } else {
                 GameMode gameMode = p.getGameMode();

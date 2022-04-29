@@ -24,8 +24,6 @@ public class BankerDeposit implements Listener {
     @EventHandler
     public void onPlayerClickInventory(InventoryClickEvent e) {
         Player player = (Player) e.getWhoClicked();
-        NamespacedKey namespacedKey = new NamespacedKey(Main.instance, "balance");
-        PersistentDataContainer pbalance = player.getPersistentDataContainer();
         if (e.getView().getTitle().equalsIgnoreCase("§6§lBank")) {
             e.setCancelled(true);
             if (Objects.requireNonNull(e.getCurrentItem()).getItemMeta() != null) {
@@ -60,7 +58,7 @@ public class BankerDeposit implements Listener {
                         ItemMeta meta7 = balance.getItemMeta();
                         meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
                         ArrayList<String> lore = new ArrayList();
-                        lore.add(" ");
+                        lore.add("");
                         //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to deposit!");
                         meta7.setLore(lore);
                         balance.setItemMeta(meta7);
@@ -79,7 +77,7 @@ public class BankerDeposit implements Listener {
                         ItemMeta meta7 = balance.getItemMeta();
                         meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
                         ArrayList<String> lore = new ArrayList();
-                        lore.add(" ");
+                        lore.add("");
                         //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to deposit!");
                         meta7.setLore(lore);
                         balance.setItemMeta(meta7);
@@ -98,7 +96,7 @@ public class BankerDeposit implements Listener {
                         num = num + 64;
                         meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
                         ArrayList<String> lore = new ArrayList();
-                        lore.add(" ");
+                        lore.add("");
                         //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to deposit!");
                         meta7.setLore(lore);
                         balance.setItemMeta(meta7);
@@ -136,7 +134,7 @@ public class BankerDeposit implements Listener {
                     ItemMeta meta7 = balance.getItemMeta();
                     meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num);
                     ArrayList<String> lore = new ArrayList();
-                    lore.add(" ");
+                    lore.add("");
                     //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to deposit!");
                     meta7.setLore(lore);
                     balance.setItemMeta(meta7);

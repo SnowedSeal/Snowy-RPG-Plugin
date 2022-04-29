@@ -52,7 +52,7 @@ public class BankerWithdraw implements Listener {
                             ItemMeta meta7 = balance.getItemMeta();
                             meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD+ "Balance: " + num);
                             ArrayList<String> lore = new ArrayList();
-                            lore.add(" ");
+                            lore.add("");
                             //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to withdraw!");
                             meta7.setLore(lore);
                             balance.setItemMeta(meta7);
@@ -85,7 +85,7 @@ public class BankerWithdraw implements Listener {
                                 ItemMeta meta7 = balance.getItemMeta();
                                 meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num);
                                 ArrayList<String> lore = new ArrayList();
-                                lore.add(" ");
+                                lore.add("");
                                 //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to withdraw!");
                                 meta7.setLore(lore);
                                 balance.setItemMeta(meta7);
@@ -120,7 +120,7 @@ public class BankerWithdraw implements Listener {
                                 ItemMeta meta7 = balance.getItemMeta();
                                 meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num);
                                 ArrayList<String> lore = new ArrayList();
-                                lore.add(" ");
+                                lore.add("");
                                 //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to withdraw!");
                                 meta7.setLore(lore);
                                 balance.setItemMeta(meta7);
@@ -155,7 +155,7 @@ public class BankerWithdraw implements Listener {
                                 ItemMeta meta7 = balance.getItemMeta();
                                 meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num);
                                 ArrayList<String> lore = new ArrayList();
-                                lore.add(" ");
+                                lore.add("");
                                 //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to withdraw!");
                                 meta7.setLore(lore);
                                 balance.setItemMeta(meta7);
@@ -198,7 +198,7 @@ public class BankerWithdraw implements Listener {
                     ItemMeta meta7 = balance.getItemMeta();
                     meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num1);
                     ArrayList<String> lore = new ArrayList();
-                    lore.add(" ");
+                    lore.add("");
                     //lore.add("" + ChatColor.YELLOW + ChatColor.BOLD + "[CLICK] " + ChatColor.RESET + ChatColor.YELLOW + "to choose a specific amount to withdraw!");
                     meta7.setLore(lore);
                     balance.setItemMeta(meta7);

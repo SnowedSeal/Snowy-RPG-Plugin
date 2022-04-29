@@ -1,6 +1,8 @@
 package me.septicraft.mcplug.mobs.npcs;
 
+import com.google.gson.JsonObject;
 import me.septicraft.mcplug.Main;
+import me.septicraft.mcplug.system.mongodb.MongoDBUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -42,18 +44,13 @@ public class NPC2 implements Listener {
                     ItemMeta meta5 = voids.getItemMeta();
                     meta5.setDisplayName(" ");
                     voids.setItemMeta(meta5);
-                    int num1 = 0;
-                    if (pbalance.get(namespacedKey, PersistentDataType.INTEGER) != null) {
-                        num1 = pbalance.get(namespacedKey, PersistentDataType.INTEGER);
-                    } else {
-                        p.sendMessage(ChatColor.RED + "There was an error when finding you're balance! Please report this!");
-                        p.closeInventory();
-                    }
+                    JsonObject num1 = MongoDBUtil.readData("_id", p.getUniqueId());
+                    int num = Integer.parseInt(num1.get("balance").toString());
                     ItemStack balance = new ItemStack(Material.GOLD_BLOCK);
 //                    pbalance.set(namespacedKey, PersistentDataType.INTEGER, 1);
 
                     ItemMeta meta7 = balance.getItemMeta();
-                    meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num1);
+                    meta7.setDisplayName("" + ChatColor.GOLD + ChatColor.BOLD + "Balance: " + num);
                     balance.setItemMeta(meta7);
                     inv.setItem(0, voids);
                     inv.setItem(1, voids);

@@ -54,6 +54,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
@@ -78,6 +79,7 @@ import java.io.IOException;
         import java.util.List;
 import java.util.*;
 
+import static net.dv8tion.jda.api.interactions.commands.OptionType.STRING;
 import static net.dv8tion.jda.api.interactions.commands.OptionType.USER;
 
 public class Main extends JavaPlugin {
@@ -149,10 +151,7 @@ public class Main extends JavaPlugin {
                     .setActivity(Activity.listening("Septicraft..."))
                     .build();
             jda.awaitReady();
-        } catch (LoginException e) {
-            e.printStackTrace();
-            return;
-        } catch (InterruptedException e) {
+        } catch (LoginException | InterruptedException e) {
             e.printStackTrace();
             return;
         }
@@ -166,6 +165,9 @@ public class Main extends JavaPlugin {
                         .addOptions(new OptionData(USER, "user", "The user to ping in the process")));
         commands.addCommands(
                 Commands.slash("tps", "Get the TPS of the server."));
+        commands.addCommands(
+                Commands.slash("fetch", "Get the data of a player from the database")
+                        .addOptions(new OptionData(STRING, "username", "Who you want data for").setRequired(true)));
         commands.queue();
         TextChannel channel = jda.getGuildById("945036462141890601").getTextChannelById("946929911095001118");
         channel.sendMessage("**Connected to Websocket**").queue();

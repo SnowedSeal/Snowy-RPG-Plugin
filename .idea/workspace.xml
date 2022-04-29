@@ -10,26 +10,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a66c3e81-1ad4-4a0d-acfd-8fe6b52f1822" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/mongodb/MongoDBUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/aetherarmor/AetherArmorListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Septicraft.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Septicraft.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_2_0_70dc93cd09_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_2_0_86bffa503c_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_api_2_0_70dc93cd09_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_api_2_0_86bffa503c_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_bungeecord_2_0_70dc93cd09_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_bungeecord_2_0_86bffa503c_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_netty_common_2_0_70dc93cd09_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_netty_common_2_0_86bffa503c_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_spigot_2_0_70dc93cd09_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_spigot_2_0_86bffa503c_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_velocity_2_0_70dc93cd09_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_retrooper_packetevents_velocity_2_0_86bffa503c_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_2_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_2_R0_1_SNAPSHOT.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/rookieglider/RookieGliderListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/rookieglider/RookieGliderListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/windstep/WindstepCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/windstep/WindstepCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/windstep/WindstepListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/armor/windstep/WindstepListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/BankerDeposit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/BankerDeposit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/BankerInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/BankerInventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/BankerWithdraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/BankerWithdraw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/discord/ChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/discord/ChatMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/discord/JoinEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/discord/JoinEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/mongodb/MongoDBTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/mongodb/MongoDBTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/NPC2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/mobs/npcs/NPC2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/discord/DeathEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/discord/DeathEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/discord/SlashCommandInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/septicraft/mcplug/system/discord/SlashCommandInteraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$4$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$4$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$4$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/armor/rookieglider/RookieGliderListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/armor/rookieglider/RookieGliderListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/armor/rookieglider/RookieGliderListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/armor/rookieglider/RookieGliderListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/BankerDeposit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/BankerDeposit.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/BankerInventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/BankerInventory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/BankerWithdraw.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/BankerWithdraw.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/discord/JoinEvent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/discord/JoinEvent$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/discord/JoinEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/discord/JoinEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/mongodb/MongoDBTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/mongodb/MongoDBTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/NPC2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/mobs/npcs/NPC2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/discord/DeathEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/discord/DeathEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/discord/SlashCommandInteraction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/septicraft/mcplug/system/discord/SlashCommandInteraction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <list id="c29bbf91-0ad1-49b6-b116-581a10c72745" name="Changes by roshan" comment="" />
     <list id="8e88a7ea-7ba5-4aff-8193-abba708c2e1f" name="Changes by xiaoy" comment="" />
@@ -91,7 +109,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Dependancies/mongo-java-driver-2.13.1.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2137931" />
@@ -176,8 +194,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ReadyListener" />
-        <item itemvalue="Application.Discord" />
         <item itemvalue="Application.QuickStart" />
+        <item itemvalue="Application.Discord" />
       </list>
     </recent_temporary>
   </component>

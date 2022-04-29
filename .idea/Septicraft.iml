@@ -20,14 +20,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: com.github.retrooper:packetevents:2.0-70dc93cd09-1" level="project" />
-    <orderEntry type="library" name="Maven: com.github.retrooper.packetevents:api:2.0-70dc93cd09-1" level="project" />
-    <orderEntry type="library" name="Maven: com.github.retrooper.packetevents:bungeecord:2.0-70dc93cd09-1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.retrooper:packetevents:2.0-86bffa503c-1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.retrooper.packetevents:api:2.0-86bffa503c-1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.retrooper.packetevents:bungeecord:2.0-86bffa503c-1" level="project" />
     <orderEntry type="library" name="Maven: net.kyori:adventure-text-serializer-gson-legacy-impl:4.10.1" level="project" />
     <orderEntry type="library" name="Maven: net.kyori:adventure-nbt:4.10.1" level="project" />
-    <orderEntry type="library" name="Maven: com.github.retrooper.packetevents:netty-common:2.0-70dc93cd09-1" level="project" />
-    <orderEntry type="library" name="Maven: com.github.retrooper.packetevents:spigot:2.0-70dc93cd09-1" level="project" />
-    <orderEntry type="library" name="Maven: com.github.retrooper.packetevents:velocity:2.0-70dc93cd09-1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.retrooper.packetevents:netty-common:2.0-86bffa503c-1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.retrooper.packetevents:spigot:2.0-86bffa503c-1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.retrooper.packetevents:velocity:2.0-86bffa503c-1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-lang:commons-lang:2.6" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.guava:guava:31.0.1-jre" level="project" />
